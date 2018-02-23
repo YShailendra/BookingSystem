@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing-module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AppRoutingModule } from './app-routing-module';
     CancellationComponent,
     ContactComponent,
     NavBarComponent,
-    LoginComponent
+    LoginComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
