@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 
 import { RouteGuard } from './guards/route.guard';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
 
 //roles 1-Analyst,2-Admin 3-HotelManager 4-CEO
 const routes: Routes = [
@@ -11,6 +12,10 @@ const routes: Routes = [
     path: 'login',
     canActivate:[RouteGuard],
     component: LoginComponent
+  },
+  {
+    path: '',//default url
+    component: HomeComponent
   },
   {
     path: '**',//default url
