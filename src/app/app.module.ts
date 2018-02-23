@@ -9,6 +9,9 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { BookingComponent } from './booking/booking.component';
 import { CancellationComponent } from './cancellation/cancellation.component';
 import { ContactComponent } from './contact/contact.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from './app-routing-module';
 
 
 @NgModule({
@@ -19,10 +22,13 @@ import { ContactComponent } from './contact/contact.component';
     AboutusComponent,
     BookingComponent,
     CancellationComponent,
-    ContactComponent
+    ContactComponent,
+    NavBarComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
