@@ -3,12 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 
 import { RouteGuard } from './guards/route.guard';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 //roles 1-Analyst,2-Admin 3-HotelManager 4-CEO
 const routes: Routes = [
   {
-    path: '',
+    path: 'login',
+    canActivate:[RouteGuard],
     component: LoginComponent
+  },
+  {
+    path: '**',//default url
+    component: NotFoundComponent
   },
   
 ];
