@@ -6,14 +6,16 @@
     </div>
       <div class="col-xs-8 text-right menu-1">
         <ul>
-          <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/about">About Us</a></li>
-          <li><a routerLink="/booking">Bookings</a></li>
-          <li><a routerLink="/cancellation">Cancellation</a></li>
-          <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="">Home</a></li>
+          <li><a routerLink="about">About Us</a></li>
+          <li><a routerLink="booking">Bookings</a></li>
+          <li><a routerLink="cancellation">Cancellation</a></li>
+          <li><a routerLink="contact">Contact</a></li>
+          <li><a (click)="LoginOpen()" >Login</a></li>
         </ul>	
       </div>
     </div>
   </div>
 </nav>
 
+<app-login [(visible)]="showLogin" ></app-login>

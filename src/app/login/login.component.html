@@ -1,3 +1,13 @@
-<p>
-  login works!
-</p>
+<div [@dialog] *ngIf="visible" class="dialog">
+  <ng-content></ng-content>
+  <span  *ngIf="closable" (click)="close()" class="close">&times;</span>
+  <div class="quiz-dialog-content">
+     
+      <!-- <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button> -->
+      
+  </div>
+  </div>
+ 
+<div *ngIf="visible" class="overlay" (click)="close()">
+
+</div>

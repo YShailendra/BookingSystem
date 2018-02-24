@@ -9,8 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
   constructor() { }
-
+  showLogin=false;
   ngOnInit() {
+  }
+  LoginOpen()
+  {
+    this.showLogin=true;
   }
 
 }
