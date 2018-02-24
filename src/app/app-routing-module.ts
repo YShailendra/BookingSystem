@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 
 
 
+
 //roles 1-Analyst,2-Admin 3-HotelManager 4-CEO
 const routes: Routes = [
   {
@@ -20,9 +21,13 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: '**',//default url
+    path: '',//default url
     component: HomeComponent
   },
+  // {
+  //   path: '**',//default url
+  //   component: HomeComponent
+  // },
   {
     path:'about',
     component: AboutusComponent
