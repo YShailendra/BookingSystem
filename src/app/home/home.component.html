@@ -1,22 +1,17 @@
-<div class="gtco-loader"></div>
 <div id="page">	
 	<div class="page-inner"> 
-		<nav-bar></nav-bar>
 	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(assets/images/img_bg_2.jpg)">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 text-left">
-					
-
 					<div class="row row-mt-15em">
-						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+						<div class="col-md-7 mt-text">
 							<h1>Planing Trip To Anywhere in The India?</h1>	
 						</div>
-						<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+						<div class="col-md-4 col-md-push-1">
 							<div class="form-wrap">
 								<div class="tab">
-									
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
 											<h3>Book Your Trip</h3>
@@ -46,17 +41,16 @@
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="date-start">Date Travel</label>
-														<input type="text" id="date-start" class="form-control">
+														<input id="dateTravel" type="date" [ngModel]="travelDate">
 													</div>
 												</div>
 							
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="date-return">Return Date</label>
-														<input type="text" id="date-return" class="form-control">
+														<input id="dateReturn" type="date" [ngModel]="returnDate">
 													</div>
 												</div>
-
 												<div class="row form-group">
 													<div class="col-md-12">
 														<input type="submit" class="btn btn-primary btn-block" value="Submit">
@@ -141,68 +135,6 @@
 					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 				</div>
 			</div>	
-	<footer id="gtco-footer" role="contentinfo">
-		<div class="gtco-container">
-			<div class="row row-p	b-md">
-				<div class="col-md-4">
-					<div class="gtco-widget">
-						<h3>About Us</h3>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eos molestias quod sint ipsum possimus temporibus officia iste perspiciatis consectetur in fugiat repudiandae cum. Totam cupiditate nostrum ut neque ab?</p>
-					</div>
-				</div>
-
-				<div class="col-md-2 col-md-push-1">
-					<div class="gtco-widget">
-						<h3>Destination</h3>
-						<ul class="gtco-footer-links">
-							<li><a href="#">Europe</a></li>
-							<li><a href="#">Australia</a></li>
-							<li><a href="#">Asia</a></li>
-							<li><a href="#">Canada</a></li>
-							<li><a href="#">Dubai</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-md-2 col-md-push-1">
-					<div class="gtco-widget">
-						<h3>Hotels</h3>
-						<ul class="gtco-footer-links">
-							<li><a href="#">Luxe Hotel</a></li>
-							<li><a href="#">Italy 5 Star hotel</a></li>
-							<li><a href="#">Dubai Hotel</a></li>
-							<li><a href="#">Deluxe Hotel</a></li>
-							<li><a href="#">BoraBora Hotel</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-md-push-1">
-					<div class="gtco-widget">
-						<h3>Get In Touch</h3>
-						<ul class="gtco-quick-contact">
-							<li><a href="#"><i class="icon-phone"></i> +1 234 567 890</a></li>
-							<li><a href="#"><i class="icon-mail2"></i> info@GetTemplates.co</a></li>
-							<li><a href="#"><i class="icon-chat"></i> Live Chat</a></li>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="row copyright">
-				<div class="col-md-12">
-					<p class="pull-left">
-						<!-- <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>  -->
-						<small class="block">Managed by <a href="http://elinfinitoindia.in" target="_blank">El Infinito Technologies</a></small>
-					</p>
-				</div>
-			</div>
-
-		</div>
-	</footer>
-	<!-- </div> -->
-
 	</div>
 
 	<div class="gototop js-top">

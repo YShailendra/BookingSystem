@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,14 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  
   constructor() { }
+
+   travelDate = new Date();
+   returnDate = new Date();
 
   ngOnInit() {
   }
 
 }
+
