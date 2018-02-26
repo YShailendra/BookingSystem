@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
-
-
+//local component
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import {TicketComponent} from './shared/ticket.component';
@@ -19,6 +19,8 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing-module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginService } from './services/login.service';
+import { SharedService } from './services/shared.service';
 
 
 
@@ -35,15 +37,18 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     NotFoundComponent,
     FooterComponent,
+   
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ LoginService,
+    SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

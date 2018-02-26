@@ -1,13 +1,28 @@
 <div [@dialog] *ngIf="visible" class="dialog">
   <ng-content></ng-content>
-  <span  *ngIf="closable" (click)="close()" class="close">&times;</span>
+  <span *ngIf="closable" (click)="close()" class="close">&times;</span>
   <div class="quiz-dialog-content">
-     
-      <!-- <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button> -->
-      
-  </div>
-  </div>
- 
-<div *ngIf="visible" class="overlay" (click)="close()">
+    <h3>Login</h3>
+    <div class="row">
+      <div class="col-sm-12">
+        <input class="login-input" type="text" [ngModel]="Username" placeholder="Username">
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col-sm-12">
+        <input type="password" class="login-input" [ngModel]="Password" placeholder="Password">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+
+        <input type="button" class="login-btn" (click)="Login()" value="Login">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div *ngIf="visible" class="overlay" (click)="close()"> -->
+    <div *ngIf="visible" class="overlay">
 </div>
