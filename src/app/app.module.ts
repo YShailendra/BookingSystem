@@ -9,7 +9,6 @@ import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import {TicketComponent} from './shared/ticket.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { BookingComponent } from './booking/booking.component';
 import { CancellationComponent } from './cancellation/cancellation.component';
@@ -19,6 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing-module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FooterComponent } from './footer/footer.component';
+import { TicketComponent } from './ticket/ticket.component';
+import { DetailComponent } from './detail/detail.component';
 
 
 
@@ -26,7 +27,6 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    TicketComponent,
     AboutusComponent,
     BookingComponent,
     CancellationComponent,
@@ -35,6 +35,8 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     NotFoundComponent,
     FooterComponent,
+    TicketComponent,
+    DetailComponent,
 
   ],
   imports: [
