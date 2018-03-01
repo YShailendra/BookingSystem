@@ -13,8 +13,8 @@ export class HomeComponent implements OnInit {
   
   constructor() { }
 
-   travelDate = new Date();
-   returnDate = new Date();
+   public travelDate:any = new Date();
+   public returnDate:any = new Date();
 
   ngOnInit() {
   }

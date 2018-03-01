@@ -11,3 +11,13 @@ input[type='date']
 .section-padding{
     padding-top: 17px;
 }
+/* background and color for home ticket booking form*/
+.color-heading{
+    background: #09C6AB;color:white
+}
+.form-noborder{
+    border:0px !important;
+}
+.nopadding{
+    padding:0px !important;
+}

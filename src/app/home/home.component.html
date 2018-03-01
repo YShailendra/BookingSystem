@@ -10,12 +10,15 @@
 							<h1>Khaira Travels<br>Palia Kalan Kheri</h1>	
 						</div>
 						<div class="col-md-4 col-md-push-1">
-							<div class="form-wrap">
+							<div class="form-wrap form-noborder">
 								<div class="tab">
-									<div class="tab-content">
+									<div class="tab-content nopadding">
 										<div class="tab-content-inner active" data-content="signup">
-											<h3>Book Your Trip</h3>
-											<form action="#">
+											<div class="row">
+											<h3 class="text-center color-heading">Book Your Trip</h3>
+											</div>
+											
+											<form action="#" style="padding-top:3x;padding-bottom:10px;">
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="activities">From</label>
@@ -26,6 +29,7 @@
 															<option value="">Swimming</option>
 														</select>
 													</div>
+													
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
@@ -41,14 +45,14 @@
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="date-start">Date Travel</label>
-														<input id="dateTravel" type="date" [(ngModel)]="travelDate">
+														<input id="dateTravel" type="date" [ngModel]="travelDate" [ngModelOptions]="{standalone: true}">
 													</div>
 												</div>
 							
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="date-return">Return Date</label>
-														<input id="dateReturn" type="date" [(ngModel)]="returnDate">
+														<input id="dateReturn" type="date" [ngModel]="returnDate" [ngModelOptions]="{standalone: true}">
 													</div>
 												</div>
 												<div class="row form-group">
@@ -83,7 +87,7 @@
 			<div class="row">
 
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="fh5co-card-item image-popup">
+					<div class="fh5co-card-item">
 						<figure>
 							<div class="overlay"><i class="ti-plus"></i></div>
 							<img src="assets/images/img_1.jpg" alt="Image" class="img-responsive">
@@ -96,7 +100,7 @@
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="assets/images/img_2.jpg" class="fh5co-card-item image-popup">
+					<div class="fh5co-card-item">
 						<figure>
 							<div class="overlay"><i class="ti-plus"></i></div>
 							<img src="assets/images/img_2.jpg" alt="Image" class="img-responsive">
@@ -106,10 +110,10 @@
 							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
 							<p><span class="btn btn-primary">Schedule a Trip</span></p>
 						</div>
-					</a>
+					</div>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="assets/images/img_3.jpg" class="fh5co-card-item image-popup">
+					<div class="fh5co-card-item">
 						<figure>
 							<div class="overlay"><i class="ti-plus"></i></div>
 							<img src="assets/images/img_3.jpg" alt="Image" class="img-responsive">
@@ -119,7 +123,7 @@
 							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
 							<p><span class="btn btn-primary">Schedule a Trip</span></p>
 						</div>
-					</a>
+					</div>
 				</div>
 	
 
