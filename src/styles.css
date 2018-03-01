@@ -3,3 +3,11 @@ input[type='date']
 {
     width: 100%;
 }
+
+/* border for cancellation information  */
+.cancellation-col{
+    border:1px solid black;
+}
+.section-padding{
+    padding-top: 17px;
+}
