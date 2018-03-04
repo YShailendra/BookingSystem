@@ -5,19 +5,19 @@
     <h3>Login</h3>
     <div class="row">
       <div class="col-sm-12">
-        <input class="login-input" type="text" [ngModel]="Username" placeholder="Username">
+        <input class="login-input" type="text" [(ngModel)]="Username" placeholder="Username">
       </div>
     </div>
 
     <div class="row">
       <div class="col-sm-12">
-        <input type="password" class="login-input" [ngModel]="Password" placeholder="Password">
+        <input type="password" class="login-input" [(ngModel)]="Password" placeholder="Password">
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
 
-        <input type="button" class="login-btn" (click)="Login()" value="Login">
+        <button type="button" class="login-btn" (click)="Login()" >Login</button>
       </div>
     </div>
   </div>

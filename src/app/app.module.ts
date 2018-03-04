@@ -3,8 +3,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { InterceptorModule } from './interceptor.module';
 
 //local component
 import { AppComponent } from './app.component';
@@ -22,6 +22,7 @@ import { TicketComponent } from './ticket/ticket.component';
 import { DetailComponent } from './detail/detail.component';
 import { LoginService } from './services/login.service';
 import { SharedService } from './services/shared.service';
+
 
 
 
@@ -47,10 +48,11 @@ import { SharedService } from './services/shared.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    InterceptorModule
   ],
   providers: [ LoginService,
-    SharedService],
+    SharedService,CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

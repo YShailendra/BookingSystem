@@ -21,3 +21,7 @@ input[type='date']
 .nopadding{
     padding:0px !important;
 }
+.header-padding
+{
+    padding:20px;
+}
