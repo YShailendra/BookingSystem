@@ -1,6 +1,7 @@
 import { Component, OnInit,Input,Output,EventEmitter,OnDestroy } from '@angular/core';
 import { trigger,state, style ,transition,keyframes,animate } from '@angular/animations';
 import { LoginService } from '../services/login.service';
+import { SharedService } from '../services/shared.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   public Username:string;
   public Password:string;
   private sub:any;
-  constructor(private loginService:LoginService) { }
+  constructor(private loginService:LoginService,private sharedService:SharedService) { }
   close() {
     this.visible = false;
     this.visibleChange.emit(this.visible);
@@ -35,7 +36,14 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
   public Login()
   {
-     this.sub= this.loginService.Login(this.Username,this.Password).subscribe(s=>{ console.log(s)},error=>{});
+     this.sub= this.loginService.Login(this.Username,this.Password).subscribe(s=>{ 
+       var data=s as any;
+       if(data && data.token)
+       {
+        this.sharedService.SetToken(data.token);
+        this.visible=false;
+       }
+      },error=>{});
   }
   //on component destroy
   ngOnDestroy()
