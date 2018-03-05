@@ -38,10 +38,12 @@ export class LoginComponent implements OnInit, OnDestroy {
   {
      this.sub= this.loginService.Login(this.Username,this.Password).subscribe(s=>{ 
        var data=s as any;
-       if(data && data.token)
+       console.log(data);
+       //this.visible=false;
+       if(data.Value)
        {
-        this.sharedService.SetToken(data.token);
         this.visible=false;
+        this.sharedService.SetToken(data.Value); 
        }
       },error=>{});
   }
