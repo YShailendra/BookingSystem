@@ -18,49 +18,49 @@
 											<h3 class="text-center color-heading header-padding">Book Your Trip</h3>
 											</div>
 											
-											<form  style="padding-top:3x;padding-bottom:10px;">
+											<div  style="padding-top:3x;padding-bottom:10px;">
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="activities1">From</label>
-														<select  id="activities1" class="form-control">
-															<option value="">Activities</option>
-															<option value="">Hiking</option>
-															<option value="">Caving</option>
-															<option value="">Swimming</option>
+														<label for="fromCity">From</label>
+														<select  id="fromCity" class="form-control" [(ngModel)]="booking.Source" (change)="OnSelectionChange()">
+															<option value="" selected disabled>Select City</option>
+															<option *ngFor="let c of Options1" [ngValue]="c">{{c}}</option>				
 														</select>
 													</div>
 													
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="activities">To</label>
-														<select  id="activities" class="form-control">
-															<option value="">Activities</option>
-															<option value="">Hiking</option>
-															<option value="">Caving</option>
-															<option value="">Swimming</option>
+														<label for="cityTo">To</label>
+														<select id="cityTo" class="form-control" 
+														[(ngModel)]="booking.Destination" (change)="OnSelectionChange()">
+															<option value="" selected disabled>Select City</option>
+															<option *ngFor="let c of Options2" [ngValue]="c">{{c}}</option>
+															<!-- <option *ngFor="let item of Options" value={{item}} >{{item}}</option> -->
 														</select>
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="date-start">Date Travel</label>
-														<input id="dateTravel" type="date" [ngModel]="travelDate" [ngModelOptions]="{standalone: true}">
+														<input id="dateTravel" type="date" [(ngModel)]="booking.JourneyDate" [ngModelOptions]="{standalone: true}">
 													</div>
 												</div>
 							
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="date-return">Return Date</label>
-														<input id="dateReturn" type="date" [ngModel]="returnDate" [ngModelOptions]="{standalone: true}">
+														<input id="dateReturn" type="date" [(ngModel)]="booking.ReturnJourneyDate" [ngModelOptions]="{standalone: true}">
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
-														<input type="submit" class="btn btn-primary btn-block" value="Submit" [routerLink]="['./detail']">
+														<input type="submit" 
+														class="btn btn-primary btn-block" 
+														value="Submit" (click)="NextBookingDetails()">
 													</div>
 												</div>
-											</form>	
+											</div>	
 										</div>
 
 										

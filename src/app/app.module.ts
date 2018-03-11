@@ -53,7 +53,7 @@ import { SharedService } from './services/shared.service';
     InterceptorModule,
     HttpModule
   ],
-  providers: [ LoginService,
+  providers: [LoginService,
     SharedService,CookieService],
   bootstrap: [AppComponent]
 })

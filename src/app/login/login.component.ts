@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit, OnDestroy {
      this.sub= this.loginService.Login(this.Username,this.Password).subscribe(s=>{ 
        var data=s as any;
        console.log(data);
-       //this.visible=false;
        if(data.Value)
        {
         this.visible=false;
