@@ -25,3 +25,8 @@ input[type='date']
 {
     padding:20px;
 }
+.bussearch{
+    background-color:cadetblue;
+    color:white;
+    margin-top:10px
+}

@@ -9,6 +9,7 @@ import {BookingComponent} from './booking/booking.component';
 import {CancellationComponent} from './cancellation/cancellation.component';
 import {ContactComponent} from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import {DetailComponent} from './detail/detail.component';
 
 
 
@@ -44,6 +45,10 @@ const routes: Routes = [
     path:'contact',
     component: ContactComponent
   },
+  {
+    path:'detail',
+    component: DetailComponent
+  }
   
 ];
 
