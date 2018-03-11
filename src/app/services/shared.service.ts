@@ -28,4 +28,15 @@ export class SharedService {
   {
     return this.cookieService.get("token");
   }
+  public GetRouteData()
+  {
+    return ['bareilly',
+      'bheera',
+      'delhi',
+      'hapur',
+      'bheera',
+      'hapur', 
+      'mailani',
+      'nighasan'];
+  }
 }
