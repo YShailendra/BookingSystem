@@ -351,7 +351,7 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   clear: both;
   background: #fff;
-  padding: 2px;
+  /* padding: 2px; */
 }
 #gtco-header .form-wrap .tab-content .tab-content-inner {
   display: none;
@@ -483,7 +483,7 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 .gtco-cover.gtco-cover-sm {
-  height: 399px;
+  height: 400px;
 }
 @media screen and (max-width: 768px) {
   .gtco-cover.gtco-cover-sm {

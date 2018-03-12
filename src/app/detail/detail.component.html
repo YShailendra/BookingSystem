@@ -14,21 +14,48 @@
   </div>
 </header>
 
-<div id="gtco-counter" class="gtco-section bussearch section-padding">
+<div id="gtco-counter" class="gtco-section bussearch">
   <div class="row" style="display:inline;">
     <div class="col-md-3 text-center">
-      <button>Return</button>
+        <button class="btn btn-success">Return</button>
     </div>
     <div class="col-md-6 text-center">
       Dummy 1 to dummy 2
       <span>date</span>
     </div>
     <div class="col-md-3 text-center">
-      <Button>
-        Modify
-      </Button>
+      <!-- <input type="button" value="Modify" class="btn btn-success" (click)="showModifySection()"> -->
+      <button class="btn btn-success" (click)="showModifySection()">Modify</button>
     </div>
   </div>
+  <div class="row" [ngClass]="currentClasses">
+      <div class="container">
+        <div class="col-md-12">
+          <span class="col-md-3">
+            From City:
+            <input type="text" name="" id="">
+          </span>
+          <span class="col-md-3">
+            To City:
+            <br>
+            <input type="text" name="" id="">
+          </span>
+          <span class="col-md-3">
+            From Date:
+            <input type="date" name="" id="">
+          </span>
+          <span class="col-md-3">
+            To Date:
+            <input type="date" name="" id="">
+          </span>
+          <p></p>
+          <div>
+            <button class="btn btn-success sec-padding" (click)="searchDetail()">Search</button>
+          </div>
+        </div>
+      </div>
+      </div>
+  
 </div>
 
 <div id="gtco-counter" class="gtco-section section-padding">
@@ -70,10 +97,9 @@
       <div class="col-md-2 text-center">Book</div>
     </div>
   </div>
-
   <div class="row">
     <div class="container">
-      <div class="col-md-12" style="background:cornflowerblue;color:white;border-bottom:1px black solid;padding:10px;">
+      <div class="col-md-12 bus-grid" >
         <div class="col-md-5">Palia To Delhi 2 X 2 (51) Seat - Sleeper A/C
           <p>Luxury AC / Seater - Sleeper</p>
         </div>
@@ -82,29 +108,29 @@
         <div class="col-md-2">500/600/700</div>
         <div class="col-md-1">dynamic contetn</div>
         <div class="col-md-2">
-          <button>Select</button>
+          <button class="btn btn-success">Book</button>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="container">
-      <div class="col-md-12" style="background:cornflowerblue;color:white;border-bottom:1px black solid;padding:10px;margin-bottom:10px;">
-        <div class="col-md-5">Palia To Delhi 2 X 2 (51) Seat - Sleeper A/C
-          <p>Luxury AC / Seater - Sleeper</p>
-        </div>
-        <div class="col-md-1">4:30 am</div>
-        <div class="col-md-1">6:00 am</div>
-        <div class="col-md-2">500/600/700</div>
-        <div class="col-md-1">dynamic contetn</div>
-        <div class="col-md-2">
-          <button>Select</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Booking Details -->
-  <div class="row">
     
+    <app-seatlayout></app-seatlayout>
   </div>
+  <div class="row">
+    <div class="container">
+      <div class="col-md-12 bus-grid" >
+        <div class="col-md-5">Palia To Delhi 2 X 2 (51) Seat - Sleeper A/C
+          <p>Luxury AC / Seater - Sleeper</p>
+        </div>
+        <div class="col-md-1">4:30 am</div>
+        <div class="col-md-1">6:00 am</div>
+        <div class="col-md-2">500/600/700</div>
+        <div class="col-md-1">dynamic contetn</div>
+        <div class="col-md-2">
+          <button class="btn btn-success">Book</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  

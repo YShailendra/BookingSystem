@@ -25,6 +25,10 @@ import { LoginService } from './services/login.service';
 import { SharedService } from './services/shared.service';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { ToastrModule } from 'ngx-toastr';
+import {SeatlayoutComponent} from './seatlayout/seatlayout.component';
+
+
+
 
 
 @NgModule({
@@ -41,6 +45,8 @@ import { ToastrModule } from 'ngx-toastr';
     FooterComponent,
     TicketComponent,
     DetailComponent,
+    SeatlayoutComponent
+   
    
 
   ],
