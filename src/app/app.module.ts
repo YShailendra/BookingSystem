@@ -23,8 +23,8 @@ import { TicketComponent } from './ticket/ticket.component';
 import { DetailComponent } from './detail/detail.component';
 import { LoginService } from './services/login.service';
 import { SharedService } from './services/shared.service';
-
-
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -51,7 +51,9 @@ import { SharedService } from './services/shared.service';
     FormsModule,
     HttpClientModule,
     InterceptorModule,
-    HttpModule
+    HttpModule,
+    Ng4LoadingSpinnerModule.forRoot(),
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [LoginService,
     SharedService,CookieService],

@@ -10,9 +10,8 @@ export class LoginService {
   //login service
   Login(usr: string, psw: string) {
 
-    console.log("userName: " + usr)
-    console.log("password: " + psw)
-    return this.http.post(environment.ApiUrl + "login", { Username: usr, Password: psw });
+    
+    return this.http.post(environment.ApiUrl + "login", { Username: usr, Password: psw },{observe:'response'});
     //return this.http.get(environment.ApiUrl + "values");
   }
 }

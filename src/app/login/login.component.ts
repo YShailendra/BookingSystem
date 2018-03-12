@@ -37,14 +37,23 @@ export class LoginComponent implements OnInit, OnDestroy {
   public Login()
   {
      this.sub= this.loginService.Login(this.Username,this.Password).subscribe(s=>{ 
-       var data=s as any;
-       console.log(data);
-       if(data.Value)
-       {
-        this.visible=false;
-        this.sharedService.SetToken(data.Value); 
-       }
-      },error=>{});
+      var data=s.body as any;
+      if(s.status===200)
+      {
+        
+        console.log(data);
+        if(data.Value)
+        {
+         this.visible=false;
+         this.sharedService.SetToken(data.Value);
+         this.sharedService.ShowSuccess("Successfully Logged-In"); 
+        }
+      } 
+      else
+      {
+        this.sharedService.ShowError(data);
+      }
+      },error=>{this.sharedService.ShowError("Error in login from server")});
   }
   //on component destroy
   ngOnDestroy()
