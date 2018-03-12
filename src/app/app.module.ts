@@ -23,6 +23,7 @@ import { TicketComponent } from './ticket/ticket.component';
 import { DetailComponent } from './detail/detail.component';
 import { LoginService } from './services/login.service';
 import { SharedService } from './services/shared.service';
+import {SeatlayoutComponent} from './seatlayout/seatlayout.component';
 
 
 
@@ -42,6 +43,7 @@ import { SharedService } from './services/shared.service';
     FooterComponent,
     TicketComponent,
     DetailComponent,
+    SeatlayoutComponent
    
    
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
+import {SeatlayoutComponent} from '../seatlayout/seatlayout.component'
 
 @Component({
   selector: 'app-detail',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
+
+  @ViewChild (SeatlayoutComponent)
 
   public currentClasses = "hid";
   constructor() { }
@@ -18,15 +21,7 @@ export class DetailComponent implements OnInit {
     if(this.currentClasses == "vis")
           this.currentClasses = "hid";
       else
-        this.currentClasses = "vis"
-      
-      
-    
-    
-    ;
-      
+        this.currentClasses = "vis";
   }
 
-
-  
 }
