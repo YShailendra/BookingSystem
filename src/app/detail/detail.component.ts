@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
+  public currentClasses = "hid";
   constructor() { }
 
   ngOnInit() {
+    
   }
 
+  showModifySection(){
+    if(this.currentClasses == "vis")
+          this.currentClasses = "hid";
+      else
+        this.currentClasses = "vis"
+      
+      
+    
+    
+    ;
+      
+  }
+
+
+  
 }

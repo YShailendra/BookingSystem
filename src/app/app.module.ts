@@ -27,6 +27,7 @@ import { SharedService } from './services/shared.service';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { SharedService } from './services/shared.service';
     FooterComponent,
     TicketComponent,
     DetailComponent,
+   
    
 
   ],
