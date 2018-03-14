@@ -363,9 +363,360 @@ a {
 .selected {
     background-color: #91CAF0;
 }
-.hid{
-    display:none;
-}
 .vis{
-    display:block;
+    display: inline;
 }
+
+.hid{
+    display: none;
+}
+
+.rfv {
+    /*color: #fff !important;*/
+    font-weight: bold;
+    /*padding-left: 14px;*/
+}
+
+.fix_contentwidth {
+    background-color: #fff;
+    padding: 10px 0 !important;
+    /*margin-top:10px !important;*/
+    margin: 0 auto;
+    width: 980px;
+    border-radius: 0 0 10px 10px;
+}
+
+.panel-group,
+.panel {
+    margin: 10px !important;
+}
+
+/*Grid*/
+
+.clear {
+    clear: both !important;
+    float: none !important;
+    background: none !important;
+}
+
+.grvMain {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.grvheader {
+    width: 98%;
+    margin: 0 auto;
+}
+
+.grvheader div {
+    float: left;
+    margin-right: 2px;
+}
+
+
+
+
+
+.Category {
+    font-size: 11px;
+    color: #0a7fb5;
+    padding-left: 2px !important;
+}
+
+.mainchart {
+    position: relative;
+}
+
+.charts {
+    background-color: #fff;
+    margin: 0 auto;
+    left: 0;
+    margin-left: 5px;
+    position: relative;
+    width: 98%;
+    left: 5px;
+}
+
+.charts .divseat {
+    position: absolute;
+    cursor: pointer;
+}
+
+.divseat {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border: solid 1px #4a4a4a;
+}
+
+.divseat a {
+
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.charts .divseat {
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* .{
+    background-color: #EEEEEE;
+    color: #4a4a4a;
+} */
+
+a {
+    color: #4a4a4a;
+}
+
+.charts a {
+    text-decoration: none;
+}
+
+.charts a:hover {
+    text-decoration: none;
+}
+
+.desk {
+    border: 0px solid #ccc;
+    float: left;
+    clear: both;
+    margin: 0px 0;
+    border-radius: 5px;
+}
+
+.custom-error-list {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: 1px 20px 1px 20px;
+}
+
+.seatselection {
+    bottom: 0px;
+    float: right;
+    width: 40%;
+}
+
+.selected {
+    background-color: #91CAF0;
+}
+
+.bookingcontinue {
+    bottom: 0px;
+    position: absolute;
+    right: 0px;
+}
+
+.Seatrate {
+    bottom: 40px;
+    position: absolute;
+    right: 0px;
+}
+
+.pickupdrop {
+    bottom: 100px;
+    position: absolute;
+    left: 0px;
+    width: 60%;
+}
+
+.aclass {
+    color: #fff !important;
+}
+
+.aclass:hover {
+    color: #fff !important;
+}
+
+.chartborder {
+    width: 310px;
+    height: 235px;
+    border: solid 0px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+/* Legends */
+
+.Legends_Ladies {
+    background-color: #A69EDB;
+    padding: 8px !important;
+}
+
+.Legends_Booked {
+    background-color: #32BEA4;
+    padding: 8px !important;
+}
+
+.Legends_Selected {
+    background-color: #91CAF0;
+    padding: 8px !important;
+}
+
+.Legends_Available {
+    background-color: #EEEEEE;
+    padding: 8px !important;
+    color: #000000 !important;
+}
+
+.Legends_LowRate {
+    background-color: #787D80;
+    padding: 8px !important;
+}
+
+.Legends_UBLP {
+    background-color: #EEEEEE;
+    padding: 8px !important;
+    color: #4a4a4a !important;
+}
+
+/* Legends */
+
+.ublb {
+    padding: 3px;
+    margin-right: 20px;
+    position: absolute;
+}
+
+.col-md-2new {
+    width: 12.666667%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 5px;
+    padding-left: 5px;
+    float: left;
+}
+
+/* End Default*/
+
+.artinfo {
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.artinfo-onwordinfo {
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.artinfo-returninfo {
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.artinfo-colorgray {
+    color: #afaca9;
+}
+
+.varticalhr {
+    height: 38px;
+    width: 2px;
+    float: left;
+    border-left: 1px solid #a7a6a6;
+}
+
+.table-padding th {
+    padding: 0px !important;
+}
+
+.table-padding td {
+    padding: 0px !important;
+    padding-left: 10px !important;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    overflow-x: auto;
+}
+
+.seating {
+    height: 20px;
+    width: 10px;
+    background: skyblue;
+    border: 1px solid black;
+}
+
+.sleeper {
+    height: 40px;
+    width: 20px;
+    background: seagreen;
+}
+
+.mainchart {
+    position: relative;
+}
+
+.charts {
+    background-color: #fff;
+    margin: 0 auto;
+    left: 0;
+    margin-left: 5px;
+    position: relative;
+    width: 98%;
+    left: 5px;
+}
+
+.charts .divseat {
+    position: absolute;
+    cursor: pointer;
+}
+
+.divseat {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border: solid 1px #4a4a4a;
+}
+
+.divseat a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.charts .divseat {
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+a {
+    color: #4a4a4a;
+}
+
+.charts a {
+    text-decoration: none;
+}
+
+.charts a:hover {
+    text-decoration: none;
+}
+
+.desk {
+    border: 0px solid #ccc;
+    float: left;
+    clear: both;
+    margin: 0px 0;
+    border-radius: 5px;
+}
+
+.custom-error-list {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: 1px 20px 1px 20px;
+}
+
+.seatselection {
+    bottom: 0px;
+    float: right;
+    width: 40%;
+}
+

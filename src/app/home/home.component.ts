@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   
   public travelDate:any = new Date();
   public returnDate:any = new Date();
+  public date:any = new Date().toDateString;
 
   public Options1=[];
   public Options2=[];
@@ -24,6 +25,7 @@ export class HomeComponent implements OnInit {
          this.Options2=this.sharedService.GetRouteData();
          this.booking.Source="";
          this.booking.Destination="";
+         
    }
 
    

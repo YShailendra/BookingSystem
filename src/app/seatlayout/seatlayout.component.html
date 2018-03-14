@@ -1,4 +1,5 @@
-<div class="row"  (click)="display()">
+
+<div class="row" [ngClass]="{'hid': ishidTrue, 'vis': isShowTrue}">
     <div class="container">
             <div class="row">
                 <div class="mainchart">
@@ -320,4 +321,5 @@
                 </div>
             </div>
         </div>
-    </div>
+      
+</div>

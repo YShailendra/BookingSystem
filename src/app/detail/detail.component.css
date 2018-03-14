@@ -11,3 +11,10 @@ input{
 .bus-grid{
     background:lightgrey;color:black;border-bottom:1px black solid;padding:10px;margin-bottom:10px;
 }
+.vis{
+    display: inline;
+}
+
+.hid{
+    display: none;
+}

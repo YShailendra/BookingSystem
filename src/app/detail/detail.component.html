@@ -28,11 +28,11 @@
       <button class="btn btn-success" (click)="showModifySection()">Modify</button>
     </div>
   </div>
-  <div class="row" [ngClass]="currentClasses">
+  <div class="row" [ngClass]="{'hid': ishidTrue, 'vis': isShowTrue}">
       <div class="container">
         <div class="col-md-12">
           <span class="col-md-3">
-            From City:
+          <strong>From City:</strong> 
             <input type="text" name="" id="">
           </span>
           <span class="col-md-3">
@@ -108,7 +108,7 @@
         <div class="col-md-2">500/600/700</div>
         <div class="col-md-1">dynamic contetn</div>
         <div class="col-md-2">
-          <button class="btn btn-success">Book</button>
+          <button class="btn btn-success" (click)="showSection()">Book</button>
         </div>
       </div>
     </div>
