@@ -5,8 +5,8 @@
       <div class="col-md-12 col-md-offset-0 text-left">
         <div class="row row-mt-15em">
           <div class="col-md-12 mt-text">
-            <span class="intro-text-small text-center">Khaira Travels</span>
-            <h1 class="text-center">BOOKINGS</h1>
+            <!-- <span class="intro-text-small text-center">Khaira Travels</span>
+            <h1 class="text-center">BOOKINGS</h1> -->
           </div>
         </div>
       </div>
@@ -109,11 +109,17 @@
         <div class="col-md-1">dynamic contetn</div>
         <div class="col-md-2">
           <button class="btn btn-success" (click)="showSection()">Book</button>
+          
         </div>
       </div>
+      
     </div>
+    <button class="btn btn-primary" (click)="submitTicket()">Submit</button>
     
-    <app-seatlayout></app-seatlayout>
+    <app-seatlayout (onSeatSelected)="selectedSeats($event)">
+       
+    </app-seatlayout>
+   
   </div>
   <div class="row">
     <div class="container">

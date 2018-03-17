@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   providers:[BookingModel]
+  
 
 })
 export class HomeComponent implements OnInit {
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit {
   public Options1=[];
   public Options2=[];
   constructor(private sharedService:SharedService,public booking:BookingModel,private router:Router) {
+          this.booking = new BookingModel();
          this.Options1=this.sharedService.GetRouteData();
          this.Options2=this.sharedService.GetRouteData();
          this.booking.Source="";

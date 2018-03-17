@@ -26,6 +26,8 @@ import { SharedService } from './services/shared.service';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import {SeatlayoutComponent} from './seatlayout/seatlayout.component';
+import { BookingService } from './services/booking.service';
+import {BookingModel} from './Models/booking';
 
 
 
@@ -62,7 +64,8 @@ import {SeatlayoutComponent} from './seatlayout/seatlayout.component';
     ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [LoginService,
-    SharedService,CookieService],
-  bootstrap: [AppComponent]
+    SharedService,CookieService,BookingService],
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

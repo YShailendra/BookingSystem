@@ -6,9 +6,56 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class BookingService {
 
-  constructor(private httpClient:HttpClient) { }
-  public BookTicket(data)
-  {
-    return this.httpClient.post(environment.ApiUrl+"Booking",data);
+  constructor(private httpClient: HttpClient) { }
+
+  public BookTicket(data) {
+    return this.httpClient.post(environment.ApiUrl + "Booking",data);
   }
+
+  public GetSeatData() {
+
+    var seats = [];
+    for (var i = 1; i <= 10; i++) {
+
+      var uSleeper = {
+        SeatId: 'D' + i,
+        SeatType: 'US',
+        Amount: 700
+
+      }
+      seats.push(uSleeper);
+
+    }
+    for (var i = 1; i <= 20; i++) {
+
+      var uSleeper = {
+        SeatId: 'S' + i,
+        SeatType: 'LS',
+        Amount: 600
+
+      }
+      if (i > 10) {
+        uSleeper.SeatId = 'S' + String.fromCharCode(i + 54)
+
+      }
+      seats.push(uSleeper);
+
+    }
+    for (var i = 1; i <= 21; i++) {
+
+      var uSleeper1 = {
+        SeatId: i.toString(),
+        SeatType: 'BS',
+        Amount: 500
+
+      }
+      seats.push(uSleeper1);
+
+    }
+    console.log(seats)
+    return seats;
+  }
+
+
 }
+

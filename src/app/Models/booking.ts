@@ -8,4 +8,5 @@ export class BookingModel {
     JourneyDate:Date;
     ReturnJourneyDate:Date;
     BusID:string;
+   
 }

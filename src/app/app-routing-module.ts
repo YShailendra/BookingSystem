@@ -10,6 +10,7 @@ import {CancellationComponent} from './cancellation/cancellation.component';
 import {ContactComponent} from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import {DetailComponent} from './detail/detail.component';
+import {TicketComponent} from './ticket/ticket.component';
 
 
 
@@ -50,7 +51,10 @@ const routes: Routes = [
     path:'detail',
     component: DetailComponent
   },
-  
+  {
+    path:'ticket',
+    component:TicketComponent
+  }
   
 ];
 
