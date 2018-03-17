@@ -13,7 +13,7 @@
                                         <div class="chartborder">
                                             <div class="divseat " (click)="bookSeat($event)"  style="top:297px; left:330.0625px;width:28.333333333333332px;height:55.125px;"
                                                 data-container="body" data-original-title="Seat Details" data-toggle="popover" data-trigger="hover">
-                                                <a class="seat" href="javascript:void(0)">SJ</a>
+                                                <a class="seat" href="javascript:void(0)" disabled>SJ</a>
                                             </div>
                                             <div class="divseat " (click)="bookSeat($event)" style="top:297px; left:294.5px;width:28.333333333333332px;height:55.125px;" data-container="body" data-original-title="Seat Details"
                                                 data-toggle="popover" data-trigger="hover" data-placement="top">
@@ -321,6 +321,7 @@
             
                             </div>
                 </div>
+
                 <div class="col-sm-5">
                     <div class="row" *ngFor="let seat of CurentBookedSeats;let i=index;">
                         <div class="col-sm-4">

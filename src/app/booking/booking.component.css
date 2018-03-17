@@ -25,6 +25,7 @@ input{
     /*padding-left: 14px;*/
 }
 
+
 .fix_contentwidth {
     background-color: #fff;
     padding: 10px 0 !important;
@@ -97,6 +98,7 @@ input{
     -webkit-border-radius: 3px;
     -khtml-border-radius: 3px;
     border: solid 1px #4a4a4a;
+    color:black;
 }
 
 .divseat a {
@@ -332,10 +334,6 @@ a {
     border: solid 1px #4a4a4a;
 }
 
-.divseat a {
-    text-decoration: none;
-    color: #FFFFFF;
-}
 
 .charts .divseat {
     text-decoration: none;
@@ -472,11 +470,7 @@ a {
     border: solid 1px #4a4a4a;
 }
 
-.divseat a {
 
-    text-decoration: none;
-    color: #FFFFFF;
-}
 
 .charts .divseat {
     text-decoration: none;
@@ -695,10 +689,6 @@ a {
     border: solid 1px #4a4a4a;
 }
 
-.divseat a {
-    text-decoration: none;
-    color: #FFFFFF;
-}
 
 .charts .divseat {
     text-decoration: none;
@@ -741,3 +731,6 @@ a {
     width: 40%;
 }
 
+.seat a{
+    color:black;
+}

@@ -56,7 +56,15 @@ export class SeatlayoutComponent implements OnInit {
       {
         find['Gender']='';
         this.CurentBookedSeats.push(find);
-        evnt.target.style.color='red';
+        evnt.target.classList+= ' selected';
+      }
+      else{
+        this.CurentBookedSeats.forEach( (item, index) => {
+          if(item === find) this.CurentBookedSeats.splice(index,1);
+        
+        });
+        
+        
       }
         this.TotalSeatAmount();
            console.log(this.CurentBookedSeats);
