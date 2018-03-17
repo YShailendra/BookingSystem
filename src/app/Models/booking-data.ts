@@ -9,5 +9,5 @@ export class BookingData {
     ReturnJourneyDate:Date;
     BusID:string;
     BookedSeatDetails:Array<any>;
-    
+    TotalAmount:number;
 }

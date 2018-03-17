@@ -21,8 +21,8 @@
     <div class="col-sm-5" style="border:1px black solid;margin-left: 15%;">
         <h2>Your Ticket Information</h2>
         <p><span>Seats</span>
-          <span></span></p>
-        <p><span>bookingData.Amount</span>
+          <span *ngFor="let seat of Data.BookedSeatDetails">{{seat.SeatId}}</span></p>
+          <p><span>{{Data.TotalAmount}}</span>
           <span>Total Amount</span></p>
     </div>
   </div>

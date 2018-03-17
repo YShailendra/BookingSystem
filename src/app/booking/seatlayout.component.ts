@@ -61,8 +61,17 @@ export class SeatlayoutComponent implements OnInit {
       }
       else{
         this.CurentBookedSeats.forEach( (item, index) => {
-          if(item === find) this.CurentBookedSeats.splice(index,1);
-        
+          if(item === find) 
+          {
+            this.CurentBookedSeats.splice(index,1);
+           console.log(evnt.target.classList)
+           evnt.target.classList="divseat";
+            
+          }
+          else{
+
+          }
+
         });
       }
         this.TotalSeatAmount();
