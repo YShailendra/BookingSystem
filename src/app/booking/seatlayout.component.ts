@@ -18,6 +18,7 @@ export class SeatlayoutComponent implements OnInit {
   public ishidTrue;
   public isShowTrue;
   public SeatsData=[];
+  public IsSeatFilled=0;
   @Output() onSeatSelected:EventEmitter<any> = new EventEmitter();
   constructor(private bookingService:BookingService,private sharedService:SharedService) { 
     this.ishidTrue = true;
@@ -63,8 +64,6 @@ export class SeatlayoutComponent implements OnInit {
           if(item === find) this.CurentBookedSeats.splice(index,1);
         
         });
-        
-        
       }
         this.TotalSeatAmount();
            console.log(this.CurentBookedSeats);
@@ -82,6 +81,11 @@ export class SeatlayoutComponent implements OnInit {
           this.totalAmount = this.totalAmount + amount.Amount;
         
       }
+  }
+
+  submitTicket(){
+  
+      this.IsSeatFilled=1;
   }
 
 

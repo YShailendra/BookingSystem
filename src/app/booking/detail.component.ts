@@ -67,15 +67,9 @@ export class DetailComponent implements OnInit {
     this.seatLayout["showSeatLayout"]();
   }
 
-
-
-
-  submitTicket() {
-
+   submitTicket() {
       console.log(this.bookingData);
       this.IsSeatFilled=1;
-
-
    }
 
   selectedSeats(data) { 

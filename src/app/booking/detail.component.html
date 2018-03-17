@@ -109,15 +109,11 @@
         <div class="col-md-1">dynamic contetn</div>
         <div class="col-md-2">
           <button class="btn btn-success" (click)="showSection()">Book</button>
-          
         </div>
       </div>
-      
     </div>
-    <button class="btn btn-primary" (click)="submitTicket()">Submit</button>
     <div [hidden]="IsSeatFilled>0">
       <app-seatlayout (onSeatSelected)="selectedSeats($event)">
-       
       </app-seatlayout>
     </div>
     <div [hidden]="IsSeatFilled==0" >
