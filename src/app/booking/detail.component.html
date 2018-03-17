@@ -115,10 +115,16 @@
       
     </div>
     <button class="btn btn-primary" (click)="submitTicket()">Submit</button>
-    
-    <app-seatlayout (onSeatSelected)="selectedSeats($event)">
+    <div [hidden]="IsSeatFilled>0">
+      <app-seatlayout (onSeatSelected)="selectedSeats($event)">
        
-    </app-seatlayout>
+      </app-seatlayout>
+    </div>
+    <div [hidden]="IsSeatFilled==0" >
+      <app-ticket [(BookingDetail)]="bookingData">
+      </app-ticket>
+    </div>
+    
    
   </div>
   <div class="row">

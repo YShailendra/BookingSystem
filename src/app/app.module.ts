@@ -19,15 +19,15 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing-module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FooterComponent } from './footer/footer.component';
-import { TicketComponent } from './ticket/ticket.component';
-import { DetailComponent } from './detail/detail.component';
+import { TicketComponent } from './booking/ticket.component';
+import { DetailComponent } from './booking/detail.component';
 import { LoginService } from './services/login.service';
 import { SharedService } from './services/shared.service';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { ToastrModule } from 'ngx-toastr';
-import {SeatlayoutComponent} from './seatlayout/seatlayout.component';
+import {SeatlayoutComponent} from './booking/seatlayout.component';
 import { BookingService } from './services/booking.service';
-import {BookingModel} from './Models/booking';
+
 
 
 

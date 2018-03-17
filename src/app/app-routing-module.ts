@@ -9,8 +9,8 @@ import {BookingComponent} from './booking/booking.component';
 import {CancellationComponent} from './cancellation/cancellation.component';
 import {ContactComponent} from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
-import {DetailComponent} from './detail/detail.component';
-import {TicketComponent} from './ticket/ticket.component';
+import {DetailComponent} from './booking/detail.component';
+import {TicketComponent} from './booking/ticket.component';
 
 
 

@@ -6,7 +6,7 @@ import {BookingModel} from '../Models/booking';
 @Component({
   selector: 'app-seatlayout',
   templateUrl: './seatlayout.component.html',
-  styleUrls: ['./seatlayout.component.css']
+  styleUrls: ['./booking.component.css']
 })
 export class SeatlayoutComponent implements OnInit {
 

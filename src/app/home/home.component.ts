@@ -4,13 +4,12 @@ import {FormsModule} from '@angular/forms';
 import { BookingModel } from '../models/booking'
 import { SharedService } from '../services/shared.service';
 import { Router } from '@angular/router';
+import { BookingData } from '../Models/booking-data';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers:[BookingModel]
-  
 
 })
 export class HomeComponent implements OnInit {
@@ -18,11 +17,11 @@ export class HomeComponent implements OnInit {
   public travelDate:any = new Date();
   public returnDate:any = new Date();
   public date:any = new Date().toDateString;
-
+  public booking:BookingData;
   public Options1=[];
   public Options2=[];
-  constructor(private sharedService:SharedService,public booking:BookingModel,private router:Router) {
-          this.booking = new BookingModel();
+  constructor(private sharedService:SharedService,private router:Router) {
+         this.booking = new BookingData();
          this.Options1=this.sharedService.GetRouteData();
          this.Options2=this.sharedService.GetRouteData();
          this.booking.Source="";
@@ -35,12 +34,35 @@ export class HomeComponent implements OnInit {
   }
   OnSelectionChange()
   {
-    console.log(this.booking.Destination)
-    console.log(this.booking.Source)
+    
   }
   NextBookingDetails()
   {
-    this.router.navigate(['./detail',{Source:this.booking.Source,Destination:this.booking.Destination,JourneyDate:this.booking.JourneyDate,ReturnJourneyDate:this.booking.ReturnJourneyDate}])
+    if(this.Validation())
+    {
+      this.router.navigate(['./detail',{Source:this.booking.Source,Destination:this.booking.Destination,JourneyDate:this.booking.JourneyDate,ReturnJourneyDate:this.booking.ReturnJourneyDate}])
+    }
+    
+  }
+  Validation()
+  {
+    var IsValid=true;
+    if(!this.booking.Source && this.booking.Source=='')
+    {
+      IsValid=false;
+      this.sharedService.ShowInfo("Please provide the source")
+    }
+    else if(!this.booking.Destination && this.booking.Destination=='')
+    {
+      IsValid=false;
+      this.sharedService.ShowInfo("Please provide the destination")
+    }
+    else if(!this.booking.JourneyDate && this.booking.JourneyDate!=null)
+    {
+      IsValid=false;
+      this.sharedService.ShowInfo("Please provide the journey date")
+    }
+    return IsValid;
   }
 }
 
