@@ -11,7 +11,7 @@ import { BookingService } from '../services/booking.service';
 export class TicketComponent implements OnInit {
 
   @Input('BookingDetail')
-  setData(value)
+  set setData(value)
   {
     console.log('Input Data')
     console.log(value)
@@ -30,6 +30,8 @@ export class TicketComponent implements OnInit {
   //Submit ticket details
   SubmitBookingDetails()
   {
+    //BookedSeats
+    this.Data.BookedSeats= JSON.stringify(this.Data.BookedSeatDetails);
     this.service.BookTicket(this.Data).subscribe(success=>{
       console.log(success);
       if(success)
