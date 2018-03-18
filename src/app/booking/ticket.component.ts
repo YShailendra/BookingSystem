@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { BookingData } from '../Models/booking-data';
 import { SharedService } from '../services/shared.service';
 import { BookingService } from '../services/booking.service';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-ticket',
@@ -20,10 +21,16 @@ export class TicketComponent implements OnInit {
       this.Data=value;
     }
   }
+
   public Data:BookingData;
+  public totalAmount:any;
   constructor(private sharedService:SharedService,private service:BookingService) {
     this.Data= new BookingData();
+    
+
    }
+ 
+  
 
   ngOnInit() {
   }
@@ -41,4 +48,5 @@ export class TicketComponent implements OnInit {
     },error=>{ console.log(error); this.sharedService.ShowError("Error in booking the ticket") })
 
   }
+  
 }

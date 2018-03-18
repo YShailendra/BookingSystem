@@ -42,10 +42,7 @@ export class DetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.bookingData.Source = this.route.snapshot.params["Source"];
-    // this.bookingData.Destination = this.route.snapshot.params["Destination"];
-    // this.bookingData.JourneyDate = this.route.snapshot.params["JourneyDate"];
-    // this.bookingData.ReturnJourneyDate = this.route.snapshot.params["ReturnJourneyDate"];
+    
     this.bookingData.Source = this.route.snapshot.params["Source"];
     this.bookingData.Destination = this.route.snapshot.params["Destination"];
     this.bookingData.JourneyDate = this.route.snapshot.params["JourneyDate"];
@@ -76,18 +73,23 @@ export class DetailComponent implements OnInit {
     this.seatLayout["showSeatLayout"]();
   }
 
-
-
-
-  submitTicket() {
-
+   submitTicket() {
       console.log(this.bookingData);
       this.IsSeatFilled=1;
-
-
    }
 
   selectedSeats(data) { 
     this.bookingData.BookedSeatDetails = data;
+    this.TotalSeatAmount();
+  }
+  TotalSeatAmount(){
+    
+    var amnt=0;
+      for(let amount of this.bookingData.BookedSeatDetails){
+    
+          amnt = amnt + amount.Amount;
+        
+      }
+      this.bookingData.TotalAmount = amnt;
   }
 }
