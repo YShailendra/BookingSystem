@@ -7,11 +7,14 @@ import { environment } from '../../environments/environment';
 export class BookingService {
 
   constructor(private httpClient: HttpClient) { }
-
+//GetBookedSeats
   public BookTicket(data) {
     return this.httpClient.post(environment.ApiUrl + "Booking",data);
   }
-
+  //this method is used for getting all the booked seat for the selected date
+  public GetBookedSeats(data) {
+    return this.httpClient.post(environment.ApiUrl + "Booking/GetBookedSeats",data);
+  }
   public GetSeatData() {
 
     var seats = [];

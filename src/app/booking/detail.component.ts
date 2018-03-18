@@ -50,7 +50,16 @@ export class DetailComponent implements OnInit {
     this.bookingData.Destination = this.route.snapshot.params["Destination"];
     this.bookingData.JourneyDate = this.route.snapshot.params["JourneyDate"];
     this.bookingData.ReturnJourneyDate = this.route.snapshot.params["ReturnJourneyDate"];
-
+    this.GetBookedSeats();
+  }
+  //get booked seats
+  public BookedSeats:any;
+  GetBookedSeats()
+  {
+    this.service.GetBookedSeats(this.bookingData).subscribe(s=>{
+      console.log(s)
+      //this.BookedSeats=JSON.parse(s);
+    },error=>{this.sharedService.ShowError("Error occured while loading booked ticket details")})
   }
 
   showModifySection() {
