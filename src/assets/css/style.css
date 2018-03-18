@@ -65,7 +65,7 @@ p {
 h1, h2, h3, h4, h5, h6, figure {
   color: #000;
   font-family: "Lato", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0 0 20px 0;
 }
 
@@ -97,11 +97,14 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 0;
   left: 0;
   margin: 0;
-  padding: 0;
   width: 100%;
   padding: 20px 0;
   z-index: 1024;
+  
+  padding: 13px;
 }
+
+
 @media screen and (max-width: 768px) {
   .gtco-nav {
     padding: 20px 0;
@@ -119,6 +122,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .gtco-nav a {
   padding: 5px 10px;
+  color:white !important;
   /* color: #fff; */
 }
 @media screen and (max-width: 768px) {
@@ -238,7 +242,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #gtco-header {
-  background: black;
+  background:cornflowerblue;
 }
 @media screen and (max-width: 992px) {
   #gtco-header.gtco-cover {
@@ -483,7 +487,7 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 .gtco-cover.gtco-cover-sm {
-  height: 84px;
+  height: 68px;
 }
 @media screen and (max-width: 768px) {
   .gtco-cover.gtco-cover-sm {
@@ -1889,4 +1893,20 @@ form label {
   }
 }
 
+.less-margin{
+  margin-top:7%;
+}
+
+.position-fixed{
+  position: relative;
+}
+
 /*# sourceMappingURL=style.css.map */
+
+.mycolor{
+color:cornflowerblue !important; 
+}
+
+label{
+  color: black;
+}
