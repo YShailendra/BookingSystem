@@ -10,26 +10,26 @@
                                     <div class="deska"><div class="ublb" style="left:328.0625px;">UB</div><div class="ublb" style="left:292.5px;">UB</div><div class="ublb" style="left:328.0625px;">UB</div><div class="ublb" style="left:292.5px;">UB</div><div class="ublb" style="left:328.0625px;">UB</div><div class="ublb" style="left:292.5px;">UB</div><div class="ublb" style="left:328.0625px;">UB</div><div class="ublb" style="left:292.5px;">UB</div><div class="ublb" style="left:328.0625px;">UB</div><div class="ublb" style="left:292.5px;">UB</div><div class="ublb" style="left:43.5625px;">UB</div><div class="ublb" style="left:79.125px;">UB</div><div class="ublb" style="left:43.5625px;">UB</div><div class="ublb" style="left:79.125px;">UB</div><div class="ublb" style="left:43.5625px;">UB</div><div class="ublb" style="left:79.125px;">UB</div><div class="ublb" style="left:43.5625px;">UB</div><div class="ublb" style="left:79.125px;">UB</div><div class="ublb" style="left:43.5625px;">UB</div><div class="ublb" style="left:221.375px;">LB</div><div class="ublb" style="left:256.9375px;">LB</div><div class="ublb" style="left:221.375px;">LB</div><div class="ublb" style="left:256.9375px;">LB</div><div class="ublb" style="left:221.375px;">LB</div><div class="ublb" style="left:256.9375px;">LB</div><div class="ublb" style="left:221.375px;">LB</div><div class="ublb" style="left:256.9375px;">LB</div><div class="ublb" style="left:221.375px;">LB</div><div class="ublb" style="left:114.6875px;">LB</div><div class="ublb" style="left:150.25px;">LB</div><div class="ublb" style="left:114.6875px;">LB</div><div class="ublb" style="left:150.25px;">LB</div><div class="ublb" style="left:114.6875px;">LB</div><div class="ublb" style="left:150.25px;">LB</div><div class="ublb" style="left:114.6875px;">LB</div><div class="ublb" style="left:185.8125px;">LB</div><div class="ublb" style="left:150.25px;">LB</div><div class="ublb" style="left:114.6875px;">LB</div><div class="ublb" style="left:150.25px;">LB</div><div class="ublb" style="left:114.6875px;">LB</div><div class="ublb" style="left:150.25px;">LB</div><div class="ublb" style="left:114.6875px;">LB</div><div class="ublb" style="left:150.25px;">LB</div><div class="ublb" style="left:114.6875px;">LB</div><div class="ublb" style="left:150.25px;">LB</div><div class="ublb" style="left:114.6875px;">LB</div><div class="ublb" style="left:150.25px;">LB</div><div class="ublb" style="left:114.6875px;">LB</div></div>
                                     
                                     <div class="desk">
-                                        <div class="chartborder">
+                                        <div class="chartborder" #seats>
                                             <div class="divseat " (click)="bookSeat($event)"  style="top:297px; left:330.0625px;width:28.333333333333332px;height:55.125px;"
                                                 data-container="body" data-original-title="Seat Details" data-toggle="popover" data-trigger="hover">
-                                                <a class="seat" href="javascript:void(0)" disabled>SJ</a>
+                                               SJ
                                             </div>
                                             <div class="divseat " (click)="bookSeat($event)" style="top:297px; left:294.5px;width:28.333333333333332px;height:55.125px;" data-container="body" data-original-title="Seat Details"
                                                 data-toggle="popover" data-trigger="hover" data-placement="top">
-                                                <a class="seat" href="javascript:void(0)">SI</a>
+                                                SI
                                             </div>
             
                                             <div class="divseat"  (click)="bookSeat($event)" style="top:234.33333333333331px; left:330.0625px;width:28.333333333333332px;height:55.125px;" data-container="body"
                                                 data-original-title="Seat Details" data-toggle="popover" data-trigger="hover" 
                                                 data-placement="top">
-                                                <a class="seat" href="javascript:void(0)" style="">SH</a>
+                                                SH
                                             </div>
                                             <div class="divseat" (click)="bookSeat($event)" style="top:234.33333333333331px; left:294.5px;width:28.333333333333332px;height:55.125px;"
                                                 data-container="body" data-original-title="Seat Details" data-toggle="popover" data-trigger="hover"
                                                 
                                                 data-placement="top">
-                                                <a class="seat" href="javascript:void(0)" style="">SG</a>
+                                                SG
                                             </div>
                                             <div class="divseat "  (click)="bookSeat($event)" style="top:171.66666666666666px; left:330.0625px;width:28.333333333333332px;height:55.125px;"
                                                 data-container="body" data-original-title="Seat Details" data-toggle="popover" data-trigger="hover"
@@ -322,28 +322,29 @@
                             </div>
                 </div>
 
-                <div class="col-sm-5">
+                <div class="col-sm-5" style="border:1px solid black;" [hidden]="totalAmount == 0">
+                        <h4 class="text-center">Select Gender</h4>
                     <div class="row" *ngFor="let seat of CurentBookedSeats;let i=index;">
                         <div class="col-sm-4">
                                 <span style="float:right;">{{seat.SeatId}} - Gender</span>
                         </div>
                         <div class="col-sm-8" >
-                            
-                            <select [(ngModel)]="seat.Gender">
+                             <select [(ngModel)]="seat.Gender">
                                 <option selected disabled>-choose-</option>
                                 <option>Male</option>
                                 <option>Female</option>
                             </select>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row section-padding">
                         <div class="col-sm-12">
-                           <span>Total Amount:{{totalAmount}}</span>
+                           <span>Total Amount:</span><span><h4 style="display:inline-block">{{totalAmount}}</h4></span>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                                
+                 
+                    <div class="row text-center section-padding">
+                        <div class="col-sm-12">
+                                <button class="btn btn-primary" (click)="submitTicket1()">Submit</button>   
                         </div>
                     </div>
                   

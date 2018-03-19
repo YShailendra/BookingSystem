@@ -11,6 +11,9 @@ export class BookingService {
   public BookTicket(data) {
     return this.httpClient.post(environment.ApiUrl + "Booking",data);
   }
+
+  
+
   //this method is used for getting all the booked seat for the selected date
   public GetBookedSeats(data) {
     return this.httpClient.post(environment.ApiUrl + "Booking/GetBookedSeats",data);
@@ -59,6 +62,12 @@ export class BookingService {
     return seats;
   }
 
+
+  // method to get bus detail 
+
+    public BusDetail(data){
+        return this.httpClient.get(environment.ApiUrl+"Bus",data);
+    }
 
 }
 

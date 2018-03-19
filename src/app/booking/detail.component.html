@@ -20,15 +20,16 @@
 <div id="gtco-counter" class="gtco-section bussearch">
   <div class="row" style="display:inline;">
     <div class="col-md-3 text-center">
-        <button class="btn btn-success">Return</button>
+        <button class="btn btn-primary">Return</button>
     </div>
     <div class="col-md-6 text-center">
-      {{Source|uppercase}} to {{Destination|uppercase}}
-      <span>{{DJourney}}</span>
+     <h4 style="margin: 0 auto;
+     font-weight: 600;"> {{bookingData.Source|uppercase}} to {{bookingData.Destination|uppercase}}</h4>
+      {{bookingData.JourneyDate}}
     </div>
     <div class="col-md-3 text-center">
-      <!-- <input type="button" value="Modify" class="btn btn-success" (click)="showModifySection()"> -->
-      <button class="btn btn-success" (click)="showModifySection()">Modify</button>
+      <!-- <input type="button" value="Modify" class="btn btn-primary" (click)="showModifySection()"> -->
+      <button class="btn btn-primary" (click)="showModifySection()">Modify</button>
     </div>
   </div>
   <div class="row" [ngClass]="{'hid': ishidTrue, 'vis': isShowTrue}">
@@ -53,7 +54,7 @@
           </span>
           <p></p>
           <div>
-            <button class="btn btn-success sec-padding" (click)="searchDetail()">Search</button>
+            <button class="btn btn-primary sec-padding" (click)="searchDetail()">Search</button>
           </div>
         </div>
       </div>
@@ -62,36 +63,42 @@
 </div>
 
 <div id="gtco-counter" class="gtco-section section-padding">
-  <div class="container">
+  
     <div class="row" style="display:inline;">
-      <div class="col-md-2 text-center" style="border:1px solid black;background:#EEEEEE;">
+        <h3 class="text-center">Seats <span class="mycolor">Status</span></h3>
+      <div class="col-md-12" style="    line-height: 40px;">
+      <div class="col-md-2 text-center" style="border:1px solid black;background:#EEEEEE;color:black;">
         Upper Berth-UP-B
       </div>
-      <div class="col-md-2 text-center" style="border:1px solid black;background:#EEEEEE;">
+      <div class="col-md-2 text-center" style="border:1px solid black;background:#EEEEEE; color:black;">
         Lower Berth-LB
       </div>
 
-      <div class="col-md-2 text-center" style="border:1px solid black;background:#91CAF0;">
+      <div class="col-md-2 text-center" style="border:1px solid black;background:#91CAF0; color:black;">
         Selected
       </div>
 
-      <div class="col-md-2 text-center" style="border:1px solid black;background:#32BEA4;">
+      <div class="col-md-2 text-center" style="border:1px solid black;background:#32BEA4; color:black;">
         Booked
       </div>
 
-      <div class="col-md-2 text-center" style="border:1px solid black;background:#A69EDB;">
+      <div class="col-md-2 text-center" style="border:1px solid black;background:#A69EDB; color:black;">
         Ladies
       </div>
-      <div class="col-md-2 text-center" style="border:1px solid black;background:#EEEEEE;">
+      <div class="col-md-2 text-center" style="border:1px solid black;background:#EEEEEE; color:black;">
         Available
       </div>
-    </div>
+    
   </div>
+</div>
 </div>
 <div id="gtco-counter" class="gtco-section section-padding">
 
+  <div class="container ">
+
   <div class="row">
-    <div class="container" style="border:1px solid black;color:black;margin-top:6px;">
+    <div>
+      <div class="col-md-12 bus-col">
       <div class="col-md-5">Route Name</div>
       <div class="col-md-1">Departure</div>
       <div class="col-md-1">Arrival</div>
@@ -99,9 +106,9 @@
       <div class="col-md-1">Vacant</div>
       <div class="col-md-2 text-center">Book</div>
     </div>
+    </div>
   </div>
   <div class="row">
-    <div class="container">
       <div class="col-md-12 bus-grid" >
         <div class="col-md-5">Palia To Delhi 2 X 2 (51) Seat - Sleeper A/C
           <p>Luxury AC / Seater - Sleeper</p>
@@ -109,15 +116,14 @@
         <div class="col-md-1">4:30 am</div>
         <div class="col-md-1">6:00 am</div>
         <div class="col-md-2">500/600/700</div>
-        <div class="col-md-1">dynamic contetn</div>
+        <div class="col-md-1"></div>
         <div class="col-md-2">
-          <button class="btn btn-success" (click)="showSection()">Book</button>
+          <button class="btn btn-primary" (click)="showSection()">Book</button>
         </div>
       </div>
-    </div>
-    <button class="btn btn-primary" (click)="submitTicket()">Submit</button>
+      <div class="row" style="border-bottom:1px solid black;margin:0px;"></div>
     <div [hidden]="IsSeatFilled>0">
-      <app-seatlayout (onSeatSelected)="selectedSeats($event)">
+      <app-seatlayout (onSeatSelected)="selectedSeats($event)" (onsubmitTicket)="onsubmitTicket($event)" [BookingModel]="bookingData">
       </app-seatlayout>
     </div>
     <div [hidden]="IsSeatFilled==0" >
@@ -128,7 +134,7 @@
    
   </div>
   <div class="row">
-    <div class="container">
+    
       <div class="col-md-12 bus-grid" >
         <div class="col-md-5">Palia To Delhi 2 X 2 (51) Seat - Sleeper A/C
           <p>Luxury AC / Seater - Sleeper</p>
@@ -138,11 +144,11 @@
         <div class="col-md-2">500/600/700</div>
         <div class="col-md-1">dynamic contetn</div>
         <div class="col-md-2">
-          <button class="btn btn-success">Book</button>
+          <button class="btn btn-primary">Book</button>
         </div>
       </div>
     </div>
-  </div>
   
+  </div>
 
   

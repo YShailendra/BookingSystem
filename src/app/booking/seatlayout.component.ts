@@ -1,25 +1,32 @@
-import { Component, OnInit,Input,EventEmitter,Output } from '@angular/core';
+import { Component, OnInit,Input,EventEmitter,Output,ViewChild,AfterViewInit, ElementRef } from '@angular/core';
 import { BookingService } from '../services/booking.service';
 import { SharedService } from '../services/shared.service';
 import {BookingModel} from '../Models/booking';
+import {DetailComponent} from '../booking/detail.component'
 
 @Component({
   selector: 'app-seatlayout',
   templateUrl: './seatlayout.component.html',
   styleUrls: ['./booking.component.css']
 })
-export class SeatlayoutComponent implements OnInit {
+export class SeatlayoutComponent implements OnInit,AfterViewInit {
 
 
   // public isDisplayed = "hid";
 
   public model:BookingModel;
+  
+  public detailcomponent: DetailComponent;
 
   public ishidTrue;
   public isShowTrue;
   public SeatsData=[];
+  public seatStatus:any = [];
   public IsSeatFilled=0;
+  public BookSeatData:any =[];
   @Output() onSeatSelected:EventEmitter<any> = new EventEmitter();
+  @Output() onsubmitTicket:EventEmitter<any> = new EventEmitter();
+  @ViewChild('seats') seats:ElementRef;
   constructor(private bookingService:BookingService,private sharedService:SharedService) { 
     this.ishidTrue = true;
     this.isShowTrue= false;
@@ -27,9 +34,41 @@ export class SeatlayoutComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.SeatsData=this.bookingService.GetSeatData();
+  }
+  ngAfterViewInit(){
+    this.GetBookedSeats();
+    console.log(this.seats.nativeElement.children);
+}
+public BookedSeats:any;
+  
+  GetBookedSeats()
+  {
+    this.bookingService.GetBookedSeats(this.BookingModel).subscribe(s=>{
+      console.log(s);
+      var Data=s as any;
+      Data.forEach(element => {
+            this.BookSeatData.push(element.SeatId);
+      });
+      for(var i =0;i<51;i++){
+      
+        var seatContent = this.seats.nativeElement.children[i];
 
+        var valueAssigned = Data.find(f=>f.SeatId == seatContent.textContent.trim());
+        if(valueAssigned){
+          console.log(seatContent);
+          if(valueAssigned.Gender == "Female") 
+          seatContent.classList += " ladies";
+          else
+            seatContent.classList += " booked";
+
+
+        }
+  
+        
+      }
+      
+    },error=>{this.sharedService.ShowError("Error occured while loading booked ticket details")})
   }
 
   @Input() showSeatLayout(){
@@ -40,11 +79,16 @@ export class SeatlayoutComponent implements OnInit {
       this.ishidTrue=true;
       this.isShowTrue=false;
   }
-
+  
   }
+  @Input() BookingModel:any;
   public CurentBookedSeats=[];
+
   bookSeat(evnt)
   {
+    if(evnt.target.classList[1] == "booked" || evnt.target.classList[1] == "ladies"){
+            return;
+    }
     if(this.CurentBookedSeats.length>9)
     {
       this.sharedService.ShowWarning("You cant select more than 10 seats in single booking!");
@@ -92,10 +136,13 @@ export class SeatlayoutComponent implements OnInit {
       }
   }
 
-  submitTicket(){
-  
-      this.IsSeatFilled=1;
+  submitTicket1(){
+    this.onsubmitTicket.emit();
   }
+ 
+ 
+
+
 
 
 }

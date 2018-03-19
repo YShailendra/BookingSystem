@@ -9,7 +9,8 @@ input{
     margin-top: 15px;
 }
 .bus-grid{
-    background:lightgrey;color:black;border-bottom:1px black solid;padding:10px;margin-bottom:10px;
+    background:lightgrey;color:black;padding:8px;
+    border:1px solid lightgray;
 }
 .vis{
     display: inline;
@@ -204,14 +205,14 @@ a {
 
 /* Legends */
 
-.Legends_Ladies {
+.ladies {
     background-color: #A69EDB;
-    padding: 8px !important;
+    color:white;
 }
 
-.Legends_Booked {
+.booked {
     background-color: #32BEA4;
-    padding: 8px !important;
+    color:white;
 }
 
 .Legends_Selected {

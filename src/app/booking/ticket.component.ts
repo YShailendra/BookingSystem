@@ -40,13 +40,19 @@ export class TicketComponent implements OnInit {
     //BookedSeats
     this.Data.BookedSeats= JSON.stringify(this.Data.BookedSeatDetails);
     this.service.BookTicket(this.Data).subscribe(success=>{
-      console.log(success);
-      if(success)
+      var Data=success as any;
+      console.log(Data.ClientData.BookingNumber);
+      if(!Data.HasError)
       {
+        this.Data = Data.ClientData;
         this.sharedService.ShowSuccess("Ticket booked successfully")
       }
     },error=>{ console.log(error); this.sharedService.ShowError("Error in booking the ticket") })
 
+  }
+  
+  return(){
+    
   }
   
 }

@@ -16,14 +16,25 @@
               </div>
             <div class="text-center">
               <button type="submit" class="btn btn-primary" (click)="SubmitBookingDetails()">Submit</button>
+              <button type="submit" class="btn btn-danger" (click)="return()">Go Back</button>
             </div>
     </div>
     <div class="col-sm-5" style="border:1px black solid;margin-left: 15%;">
         <h2>Your Ticket Information</h2>
-        <p><span>Seats</span>
-          <span *ngFor="let seat of Data.BookedSeatDetails">{{seat.SeatId}}</span></p>
-          <p><span>{{Data.TotalAmount}}</span>
-          <span>Total Amount</span></p>
+       <p> <span>Name:</span> <span>{{Data.Name}}</span></p>
+        <hr>
+        <span>Mobile Number:</span><span>{{Data.PhoneNo}}</span>
+        <hr>
+        <span>Email:Number</span><span>{{Data.Email}}</span>
+        <hr>
+        <p><span>Seats:</span>
+          <span *ngFor="let seat of Data.BookedSeatDetails">{{seat.SeatId}},</span></p>
+          <hr>
+          <p><span>Total Amount</span><span>{{Data.TotalAmount}}</span>
+          </p>
+          <hr>
+          
+
     </div>
   </div>
 
