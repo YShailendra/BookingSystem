@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
 import { BookingData } from '../Models/booking-data';
 import { SharedService } from '../services/shared.service';
 import { BookingService } from '../services/booking.service';
@@ -11,6 +11,7 @@ import { element } from 'protractor';
 })
 export class TicketComponent implements OnInit {
 
+  @Output() returnSeatLayout:EventEmitter<any> = new EventEmitter();
   @Input('BookingDetail')
   set setData(value)
   {
@@ -50,9 +51,10 @@ export class TicketComponent implements OnInit {
     },error=>{ console.log(error); this.sharedService.ShowError("Error in booking the ticket") })
 
   }
-  
-  return(){
-    
+
+  BackToSeat(){
+        this.returnSeatLayout.emit(0);
   }
   
+
 }

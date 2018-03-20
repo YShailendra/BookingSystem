@@ -127,7 +127,7 @@
       </app-seatlayout>
     </div>
     <div [hidden]="IsSeatFilled==0" >
-      <app-ticket [BookingDetail]="bookingData">
+      <app-ticket [BookingDetail]="bookingData" (returnSeatLayout)="back()">
       </app-ticket>
     </div>
     

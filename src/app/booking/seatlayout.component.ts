@@ -45,7 +45,7 @@ public BookedSeats:any;
   GetBookedSeats()
   {
     this.bookingService.GetBookedSeats(this.BookingModel).subscribe(s=>{
-      console.log(s);
+      // console.log(s);
       var Data=s as any;
       Data.forEach(element => {
             this.BookSeatData.push(element.SeatId);
@@ -56,7 +56,7 @@ public BookedSeats:any;
 
         var valueAssigned = Data.find(f=>f.SeatId == seatContent.textContent.trim());
         if(valueAssigned){
-          console.log(seatContent);
+          // console.log(seatContent);
           if(valueAssigned.Gender == "Female") 
           seatContent.classList += " ladies";
           else

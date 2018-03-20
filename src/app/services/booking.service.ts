@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class BookingService {
@@ -15,7 +16,7 @@ export class BookingService {
   
 
   //this method is used for getting all the booked seat for the selected date
-  public GetBookedSeats(data) {
+  public GetBookedSeats(data):Observable<any> {
     return this.httpClient.post(environment.ApiUrl + "Booking/GetBookedSeats",data);
   }
   public GetSeatData() {
@@ -64,9 +65,8 @@ export class BookingService {
 
 
   // method to get bus detail 
-
-    public BusDetail(data){
-        return this.httpClient.get(environment.ApiUrl+"Bus",data);
+    public BusDetail(data):Observable<any> {
+        return this.httpClient.get(environment.ApiUrl+"Bus");
     }
 
 }

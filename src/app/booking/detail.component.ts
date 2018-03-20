@@ -22,6 +22,7 @@ export class DetailComponent implements OnInit {
   public seatLayout: SeatlayoutComponent;
   public IsSeatFilled=0;
   public seatData:any =[];
+  public BusDetail:any = [];
 
   constructor(private route: ActivatedRoute, private service: BookingService, private sharedService: SharedService) {
     
@@ -37,9 +38,12 @@ export class DetailComponent implements OnInit {
     this.bookingData.Destination = this.route.snapshot.params["Destination"];
     this.bookingData.JourneyDate = this.route.snapshot.params["JourneyDate"];
     this.bookingData.ReturnJourneyDate = this.route.snapshot.params["ReturnJourneyDate"];
-    // this.service.BusDetail(this.bookingData).subscribe(detail=>{
-    //   console.log(detail);
-    // })
+    this.service.BusDetail(this.bookingData).subscribe(detail=>{
+          this.BusDetail = detail;
+          console.log(this.BusDetail);
+    },error=>{
+      this.sharedService.ShowError("Error occured while loading bus details");
+    })
   }
   //get booked seats
   
@@ -88,5 +92,8 @@ public BookedSeats:any;
           amnt = amnt + amount.Amount;
       }
       this.bookingData.TotalAmount = amnt;
+  }
+  back(){
+    this.IsSeatFilled=0;
   }
 }
