@@ -5,6 +5,7 @@ import { BookingModel } from '../models/booking'
 import { SharedService } from '../services/shared.service';
 import { Router } from '@angular/router';
 import { BookingData } from '../Models/booking-data';
+import { Select2OptionData } from 'ng2-select2';
 
 @Component({
   selector: 'app-home',
@@ -36,7 +37,12 @@ export class HomeComponent implements OnInit {
   }
   OnSelectionChange()
   {
-    
+    var data = [];
+    Object.assign(data,this.sharedService.GetRouteData());
+    var data2 =[];
+    Object.assign(data2,this.sharedService.GetRouteData());
+    this.Options1 = data.filter(s=>s!=this.booking.Destination);
+    this.Options2 = data2.filter(s=>s!=this.booking.Source);
   }
   NextBookingDetails()
   {

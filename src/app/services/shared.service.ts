@@ -36,14 +36,13 @@ export class SharedService {
   }
   public GetRouteData()
   {
-    return ['bareilly',
-      'bheera',
-      'delhi',
-      'hapur',
-      'bheera',
-      'hapur', 
-      'mailani',
-      'nighasan'];
+    return [
+      'Bareilly',
+      'Bheera',
+      'Delhi',
+      'Hapur',
+      'Pilibhit',
+      'Nighasan'];
   }
   //this method is to show error message
   ShowError(message?:string)

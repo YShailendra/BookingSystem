@@ -38,7 +38,7 @@ export class SeatlayoutComponent implements OnInit,AfterViewInit {
   }
   ngAfterViewInit(){
     this.GetBookedSeats();
-    console.log(this.seats.nativeElement.children);
+    
 }
 public BookedSeats:any;
   
@@ -137,7 +137,7 @@ public BookedSeats:any;
   }
 
   submitTicket1(){
-    this.onsubmitTicket.emit();
+    this.onsubmitTicket.emit(this.CurentBookedSeats);
   }
  
  

@@ -18,7 +18,7 @@ export class DetailComponent implements OnInit {
   public ishidTrue: boolean;
   public isShowTrue: boolean;
   public bookingData:BookingData;
-  @ViewChild(SeatlayoutComponent)
+  // @ViewChild(SeatlayoutComponent)
   public seatLayout: SeatlayoutComponent;
   public IsSeatFilled=0;
   public seatData:any =[];
@@ -39,25 +39,35 @@ export class DetailComponent implements OnInit {
     this.bookingData.JourneyDate = this.route.snapshot.params["JourneyDate"];
     this.bookingData.ReturnJourneyDate = this.route.snapshot.params["ReturnJourneyDate"];
     this.service.BusDetail(this.bookingData).subscribe(detail=>{
-          this.BusDetail = detail;
-          console.log(this.BusDetail);
+          this.BusDetail = this.SetPropertyToShowHideDetails(detail);
+          
+          //console.log(this.BusDetail);
     },error=>{
       this.sharedService.ShowError("Error occured while loading bus details");
-    })
+    });
+
   }
   //get booked seats
-  
+public SetPropertyToShowHideDetails(dataItems?:any)
+{
+  for(let bus of dataItems)
+{
+  bus['IsSeatFilled']=0;
+}
+console.log(this.BusDetail);
+return dataItems;
+}
 public BookedSeats:any;
   
   GetBookedSeats()
   {
     this.service.GetBookedSeats(this.bookingData).subscribe(s=>{
-      console.log(s);
+      // console.log(s);
       var Data=s as any;
       Data.forEach(element => {
             this.seatData.push(element.SeatId);
       });
-      console.log(this.seatData)
+      //console.log(this.seatData)
     },error=>{this.sharedService.ShowError("Error occured while loading booked ticket details")})
   }
 
@@ -71,20 +81,34 @@ public BookedSeats:any;
     }
   }
 
-  showSection() {
-    this.seatLayout["showSeatLayout"]();
-
+  showSection(bus) {
+    this.bookingData.BusID = bus.ID;
+    console.log(bus);
+    if(bus.IsSeatFilled ==1)
+    {
+      bus.IsSeatFilled =0;
+    }
+    else
+    {
+      bus.IsSeatFilled=1;
+      this.GetBookedSeats();
+    }
   }
 
-  onsubmitTicket() {
-      console.log(this.bookingData);
-      this.IsSeatFilled=1;
+  onsubmitTicket(data) {
+      console.log(data);
+
+      var bus = this.BusDetail.find(s=>s.ID == this.bookingData.BusID);
+      if(bus){
+        bus.IsSeatFilled=2;
+      }  
    }
 
   selectedSeats(data) { 
     this.bookingData.BookedSeatDetails = data;
     this.TotalSeatAmount();
   }
+
   TotalSeatAmount(){
     
     var amnt=0;
@@ -93,7 +117,10 @@ public BookedSeats:any;
       }
       this.bookingData.TotalAmount = amnt;
   }
-  back(){
-    this.IsSeatFilled=0;
+  back(bus){
+    var bus = this.BusDetail.find(s=>s.ID == this.bookingData.BusID);
+      if(bus){
+        bus.IsSeatFilled=1;
+      }  
   }
 }

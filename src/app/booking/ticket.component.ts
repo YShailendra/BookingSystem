@@ -38,6 +38,9 @@ export class TicketComponent implements OnInit {
   //Submit ticket details
   SubmitBookingDetails()
   {
+
+      
+
     //BookedSeats
     this.Data.BookedSeats= JSON.stringify(this.Data.BookedSeatDetails);
     this.service.BookTicket(this.Data).subscribe(success=>{

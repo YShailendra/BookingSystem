@@ -36,8 +36,9 @@
 														[(ngModel)]="booking.Destination" (change)="OnSelectionChange()">
 															<option value="" selected disabled>Select City</option>
 															<option *ngFor="let c of Options2" [ngValue]="c">{{c}}</option>
-															<!-- <option *ngFor="let item of Options" value={{item}} >{{item}}</option> -->
+															
 														</select>
+													
 													</div>
 												</div>
 												<div class="row form-group">

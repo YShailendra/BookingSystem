@@ -13,9 +13,6 @@ import {DetailComponent} from './booking/detail.component';
 import {TicketComponent} from './booking/ticket.component';
 
 
-
-
-
 //roles 1-Analyst,2-Admin 3-HotelManager 4-CEO
 const routes: Routes = [
   {

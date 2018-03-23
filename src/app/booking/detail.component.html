@@ -5,14 +5,7 @@
     <div class="row">
       <div class="col-md-12 col-md-offset-0 text-left">
         <div class="row row-mt-15em">
-
-          <!-- <div class="col-md-12 mt-text">
-            <span class="intro-text-small text-center">About Us</span>
-            <h1 class="text-center">Khaira Travels</h1>	
-          </div> -->
-          
         </div>
-        
       </div>
     </div>
   </div>
@@ -108,32 +101,32 @@
     </div>
     </div>
   </div>
-  <div class="row">
-      <div class="col-md-12 bus-grid" >
+  <div class="row" *ngFor = "let bus of BusDetail">
+      <div class="col-md-12 bus-grid">
         <div class="col-md-5">Palia To Delhi 2 X 2 (51) Seat - Sleeper A/C
           <p>Luxury AC / Seater - Sleeper</p>
         </div>
         <div class="col-md-1">4:30 am</div>
         <div class="col-md-1">6:00 am</div>
         <div class="col-md-2">500/600/700</div>
-        <div class="col-md-1"></div>
+        <div class="col-md-1">{{bus.BusNo}}</div>
         <div class="col-md-2">
-          <button class="btn btn-primary" (click)="showSection()">Book</button>
+          <button class="btn btn-primary" (click)="showSection(bus)">Book</button>
         </div>
       </div>
-      <div class="row" style="border-bottom:1px solid black;margin:0px;"></div>
-    <div [hidden]="IsSeatFilled>0">
+     
+    <div *ngIf="bus.IsSeatFilled==1">
       <app-seatlayout (onSeatSelected)="selectedSeats($event)" (onsubmitTicket)="onsubmitTicket($event)" [BookingModel]="bookingData">
       </app-seatlayout>
     </div>
-    <div [hidden]="IsSeatFilled==0" >
-      <app-ticket [BookingDetail]="bookingData" (returnSeatLayout)="back()">
+    <div *ngIf="bus.IsSeatFilled >1" >
+      <app-ticket [BookingDetail]="bookingData" (returnSeatLayout)="back($event)">
       </app-ticket>
     </div>
     
    
   </div>
-  <div class="row">
+  <!-- <div class="row">
     
       <div class="col-md-12 bus-grid" >
         <div class="col-md-5">Palia To Delhi 2 X 2 (51) Seat - Sleeper A/C
@@ -147,7 +140,7 @@
           <button class="btn btn-primary">Book</button>
         </div>
       </div>
-    </div>
+    </div> -->
   
   </div>
 

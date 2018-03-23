@@ -9,8 +9,9 @@ input{
     margin-top: 15px;
 }
 .bus-grid{
-    background:lightgrey;color:black;padding:8px;
-    border:1px solid lightgray;
+    padding: 8px;
+    border-bottom: 1px solid black;
+    color:black;
 }
 .vis{
     display: inline;

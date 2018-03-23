@@ -8,7 +8,6 @@ import { ToastrService } from 'ngx-toastr';
 export class AppComponent {
   title = 'app';
   
- 
   constructor(private toastrService: ToastrService)
   {
     

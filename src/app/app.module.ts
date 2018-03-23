@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { InterceptorModule } from './interceptor.module';
+import { Select2Module } from 'ng2-select2';
 
 //local component
 import { AppComponent } from './app.component';
@@ -29,10 +30,6 @@ import {SeatlayoutComponent} from './booking/seatlayout.component';
 import { BookingService } from './services/booking.service';
 
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,10 +45,8 @@ import { BookingService } from './services/booking.service';
     TicketComponent,
     DetailComponent,
     SeatlayoutComponent
-   
-   
-
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -62,10 +57,11 @@ import { BookingService } from './services/booking.service';
     HttpModule,
     Ng4LoadingSpinnerModule.forRoot(),
     ToastrModule.forRoot(), // ToastrModule added
+    Select2Module, //select2 
   ],
   providers: [LoginService,
-    SharedService,CookieService,BookingService],
-  bootstrap: [AppComponent],
+              SharedService,CookieService,BookingService],
+              bootstrap: [AppComponent],
+  })
   
-})
-export class AppModule { }
+  export class AppModule { }
