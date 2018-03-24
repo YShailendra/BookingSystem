@@ -11,6 +11,11 @@ export class NavBarComponent implements OnInit {
   showLogin=false;
   ngOnInit() {
   }
+  isIn = false;   // store state
+  toggleState() { // click handler
+      let bool = this.isIn;
+      this.isIn = bool === false ? true : false; 
+  }
   LoginOpen()
   {
     this.showLogin=true;

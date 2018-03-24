@@ -1,0 +1,57 @@
+<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(images/img_bg_3.jpg)">
+  <div class="overlay"></div>
+  <div class="gtco-container">
+    <div class="row">
+      <div class="col-md-12 col-md-offset-0 text-left">
+        <div class="row row-mt-15em">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="row">
+    <div class="container">
+        <h2 class="text-center">Reports</h2>
+        <div class="col-md-12">
+          <div class="col-md-5">
+              <label for="date-start"> Select Date</label>
+              <input id="dateTravel" class="form-control" type="date">
+          </div>
+          <div class="col-md-5 col-md-push-1">
+              <label for="fromCity">Last</label>
+              <select  id="fromCity" class="form-control" (change)="OnSelectionChange()">
+                <option value="" selected disabled>Select City</option>
+                <option *ngFor="let c of daysOptions" [ngValue]="c.value">{{c.option}}</option>				
+              </select>
+          </div>
+        </div>
+        <div class="col-md-12 ">
+            <span class="col-md-4">
+                <label for="fromCity">From</label>
+                <select  id="fromCity" class="form-control"  (change)="OnSelectionChange()">
+                  <option value="" selected disabled>Select City</option>
+                  <option *ngFor="let c of Option1" [ngValue]="c">{{c}}</option>				
+                </select>
+            </span>
+            <span class="col-md-4">
+                <label for="fromCity">To</label>
+                <select  id="fromCity" class="form-control" (change)="OnSelectionChange()">
+                  <option value="" selected disabled>Select City</option>
+                  <option *ngFor="let c of Option2" [ngValue]="c">{{c}}</option>				
+                </select>
+            </span>
+            <span class="col-md-4">
+                    <label for="date-start">Date Travel</label>
+                    <input id="dateTravel" class="form-control" type="date">
+            </span>
+            <p></p>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-4">
+             <button class="btn btn-primary text-center" value="Generate Report"> Generate Report</button>
+            </div>
+          </div>
+
+    </div>
+  </div>

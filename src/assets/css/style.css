@@ -100,7 +100,6 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 100%;
   padding: 20px 0;
   z-index: 1024;
-  
   padding: 13px;
 }
 
@@ -294,6 +293,7 @@ h1, h2, h3, h4, h5, h6, figure {
     font-size: 34px;
     line-height: 1.2;
     margin-bottom: 10px;
+    margin-top: 37px;
   }
 }
 #gtco-header h2 {
@@ -1262,9 +1262,9 @@ form label {
   border-bottom: none !important;
 }
 @media screen and (max-width: 768px) {
-  .gtco-nav-toggle {
+  /* .gtco-nav-toggle {
     display: block;
-  }
+  } */
 }
 
 .btn {
@@ -1913,6 +1913,7 @@ label{
 
 option{
   color:black;
+  /* background: aqua; */
 }
 .shadow-bus{
   -webkit-box-shadow: 9px 7px 5px -4px rgba(0,0,0,1);

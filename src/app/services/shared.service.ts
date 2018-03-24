@@ -42,7 +42,8 @@ export class SharedService {
       'Delhi',
       'Hapur',
       'Pilibhit',
-      'Nighasan'];
+      'Nighasan',
+      'Palia'];
   }
   //this method is to show error message
   ShowError(message?:string)

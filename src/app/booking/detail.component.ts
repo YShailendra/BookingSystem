@@ -5,6 +5,7 @@ import { NgClass } from '@angular/common';
 import { BookingService } from '../services/booking.service';
 import { SharedService } from '../services/shared.service';
 import { BookingData } from '../Models/booking-data';
+import { BusService } from '../services/bus.service';
 
 @Component({
   selector: 'app-detail',
@@ -24,7 +25,7 @@ export class DetailComponent implements OnInit {
   public seatData:any =[];
   public BusDetail:any = [];
 
-  constructor(private route: ActivatedRoute, private service: BookingService, private sharedService: SharedService) {
+  constructor(private route: ActivatedRoute, private service: BookingService, private sharedService: SharedService,private busService:BusService) {
     
     this.ishidTrue = true;
     this.isShowTrue = false;
@@ -38,10 +39,9 @@ export class DetailComponent implements OnInit {
     this.bookingData.Destination = this.route.snapshot.params["Destination"];
     this.bookingData.JourneyDate = this.route.snapshot.params["JourneyDate"];
     this.bookingData.ReturnJourneyDate = this.route.snapshot.params["ReturnJourneyDate"];
-    this.service.BusDetail(this.bookingData).subscribe(detail=>{
+    this.busService.BusDetail(this.bookingData).subscribe(detail=>{
           this.BusDetail = this.SetPropertyToShowHideDetails(detail);
-          
-          //console.log(this.BusDetail);
+          console.log(this.BusDetail);
     },error=>{
       this.sharedService.ShowError("Error occured while loading bus details");
     });

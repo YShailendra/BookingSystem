@@ -11,6 +11,8 @@ import {ContactComponent} from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import {DetailComponent} from './booking/detail.component';
 import {TicketComponent} from './booking/ticket.component';
+import { AdminComponent } from './admin/admin.component';
+import { ReportingComponent } from './admin/reporting.component';
 
 
 //roles 1-Analyst,2-Admin 3-HotelManager 4-CEO
@@ -51,6 +53,14 @@ const routes: Routes = [
   {
     path:'ticket',
     component:TicketComponent
+  },
+  {
+    path:'admin',
+    component:AdminComponent
+  },
+  {
+    path:'reports',
+    component:ReportingComponent
   }
   
 ];

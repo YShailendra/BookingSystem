@@ -28,6 +28,9 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import {SeatlayoutComponent} from './booking/seatlayout.component';
 import { BookingService } from './services/booking.service';
+import { AdminComponent } from './admin/admin.component';
+import { BusService} from './services/bus.service';
+import {ReportingComponent} from './admin/reporting.component';
 
 
 @NgModule({
@@ -44,7 +47,9 @@ import { BookingService } from './services/booking.service';
     FooterComponent,
     TicketComponent,
     DetailComponent,
-    SeatlayoutComponent
+    SeatlayoutComponent,
+    AdminComponent,
+    ReportingComponent
   ],
 
   imports: [
@@ -60,7 +65,7 @@ import { BookingService } from './services/booking.service';
     Select2Module, //select2 
   ],
   providers: [LoginService,
-              SharedService,CookieService,BookingService],
+              SharedService,CookieService,BookingService,BusService],
               bootstrap: [AppComponent],
   })
   
