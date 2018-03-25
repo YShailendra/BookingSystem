@@ -26,12 +26,13 @@ import { LoginService } from './services/login.service';
 import { SharedService } from './services/shared.service';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { ToastrModule } from 'ngx-toastr';
-import {SeatlayoutComponent} from './booking/seatlayout.component';
+import { SeatlayoutComponent } from './booking/seatlayout.component';
 import { BookingService } from './services/booking.service';
 import { AdminComponent } from './admin/admin.component';
 import { BusService} from './services/bus.service';
-import {ReportingComponent} from './admin/reporting.component';
-
+import { RegisterService } from './services/register.service';
+import { ReportingComponent } from './admin/reporting.component';
+import { UserComponent } from '../app/admin/user/user.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {ReportingComponent} from './admin/reporting.component';
     DetailComponent,
     SeatlayoutComponent,
     AdminComponent,
-    ReportingComponent
+    ReportingComponent,
+    UserComponent
   ],
 
   imports: [
@@ -65,7 +67,7 @@ import {ReportingComponent} from './admin/reporting.component';
     Select2Module, //select2 
   ],
   providers: [LoginService,
-              SharedService,CookieService,BookingService,BusService],
+              SharedService,CookieService,BookingService,BusService,RegisterService],
               bootstrap: [AppComponent],
   })
   

@@ -69,5 +69,13 @@ export class BookingService {
         return this.httpClient.get(environment.ApiUrl+"Bus");
     }
 
+    public CancelTicket(data){
+      return this.httpClient.put(environment.ApiUrl+"Booking",data);
+    }
+
+    public getBookingDetailById(data){
+           return this.httpClient.get(environment.ApiUrl+"Booking?bookingnumber="+data.BookingNumber+"&email="+data.Email);       
+    }
+
 }
 

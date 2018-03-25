@@ -59,17 +59,17 @@ return dataItems;
 }
 public BookedSeats:any;
   
-  GetBookedSeats()
-  {
-    this.service.GetBookedSeats(this.bookingData).subscribe(s=>{
-      // console.log(s);
-      var Data=s as any;
-      Data.forEach(element => {
-            this.seatData.push(element.SeatId);
-      });
-      //console.log(this.seatData)
-    },error=>{this.sharedService.ShowError("Error occured while loading booked ticket details")})
-  }
+  // GetBookedSeats()
+  // {
+  //   this.service.GetBookedSeats(this.bookingData).subscribe(s=>{
+  //     // console.log(s);
+  //     var Data=s as any;
+  //     Data.forEach(element => {
+  //           this.seatData.push(element.SeatId);
+  //     });
+  //     //console.log(this.seatData)
+  //   },error=>{this.sharedService.ShowError("Error occured while loading booked ticket details")})
+  // }
 
   showModifySection() {
     if (this.ishidTrue == true) {
@@ -91,13 +91,12 @@ public BookedSeats:any;
     else
     {
       bus.IsSeatFilled=1;
-      this.GetBookedSeats();
+      // this.GetBookedSeats();
     }
   }
 
   onsubmitTicket(data) {
       console.log(data);
-
       var bus = this.BusDetail.find(s=>s.ID == this.bookingData.BusID);
       if(bus){
         bus.IsSeatFilled=2;

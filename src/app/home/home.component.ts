@@ -16,11 +16,11 @@ import { trigger, animate, state, style, transition,query,stagger,keyframes } fr
       'enterAnimation', [
         transition(':enter', [
           style({transform: 'translateY(100%)', opacity: 1}),
-          animate('2500ms', style({transform: 'translateY(0)', opacity: 1}))
+          animate('2000ms', style({transform: 'translateY(0)', opacity: 1}))
         ]),
         transition(':leave', [
           style({transform: 'translateY(0)', opacity: 1}),
-          animate('2500ms', style({transform: 'translateY(100%)', opacity: 1}))
+          animate('2000ms', style({transform: 'translateY(100%)', opacity: 1}))
         ])
       ]
     )

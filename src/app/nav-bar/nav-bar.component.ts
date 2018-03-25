@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component,OnInit} from '@angular/core';
+import {SharedService} from '../services/shared.service'
 
 @Component({
   selector: 'nav-bar',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  public isAdmin:boolean =true;
+  constructor(public sharedService:SharedService) { 
+
+    // this.isAdmin = this.sharedService.IsAdmin();
+
+  }
   showLogin=false;
   ngOnInit() {
+
+    
   }
   isIn = false;   // store state
   toggleState() { // click handler

@@ -33,7 +33,13 @@ export class SharedService {
   public GetToken()
   {
     return this.cookieService.get("token");
+
   }
+
+  public IsAdmin(){
+    return true;
+  }
+
   public GetRouteData()
   {
     return [
@@ -68,4 +74,6 @@ export class SharedService {
     message=message?message:"Info message!";
     this.toastr.info(message);
   }
+
+
 }

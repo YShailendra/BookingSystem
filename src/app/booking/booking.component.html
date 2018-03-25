@@ -1,4 +1,4 @@
-<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(images/img_bg_3.jpg)">
+<!-- <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(images/img_bg_3.jpg)">
   <div class="overlay"></div>
   <div class="gtco-container">
     <div class="row">
@@ -8,26 +8,26 @@
       </div>
     </div>
   </div>
-</header>
+</header> -->
 
 <div class="row">
   <div class="container">
     <div class="col-md-6 col-md-push-3 section-padding">
       <h1 class="text-center">My <span class="mycolor">Booking</span></h1>
-      <form>
+      
         <div class="form-group">
-          <label for="Booking Number">Booking Number</label>
-          <input type="text" class="form-control" id="booking_number" required>
+          <label>Booking Number</label>
+          <input type="text" class="form-control" required [(ngModel)]="booking.BookingNumber">
         </div>
 
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="text" class="form-control" id="email">
+          <label>Email</label>
+          <input type="text" class="form-control" [(ngModel)]="booking.Email">
         </div>
         <div class="text-center">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" (click)="checkBookingStatus()">Submit</button>
         </div>
-      </form>
+      
     </div>
   </div>
 </div>

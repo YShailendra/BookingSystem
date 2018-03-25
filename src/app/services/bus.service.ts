@@ -14,5 +14,13 @@ export class BusService {
    public BusDetail(data):Observable<any> {
     return this.httpClient.get(environment.ApiUrl+"Bus?source="+data.Source+"&destination="+data.Destination);
 }
+// get route information 
+public routeInformation(){
+  return this.httpClient.get(environment.ApiUrl+"Bus/GetRoute");
+}
+// get bus details by route id
+public getBusByRouteId(data){
+    return this.httpClient.get(environment.ApiUrl+"Bus/GetBusByRouteId?routeid="+data);
+}
 
 }

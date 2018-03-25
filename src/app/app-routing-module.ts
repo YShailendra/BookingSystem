@@ -13,6 +13,7 @@ import {DetailComponent} from './booking/detail.component';
 import {TicketComponent} from './booking/ticket.component';
 import { AdminComponent } from './admin/admin.component';
 import { ReportingComponent } from './admin/reporting.component';
+import { UserComponent } from './admin/user/user.component';
 
 
 //roles 1-Analyst,2-Admin 3-HotelManager 4-CEO
@@ -56,11 +57,20 @@ const routes: Routes = [
   },
   {
     path:'admin',
-    component:AdminComponent
+    // canActivate:[RouteGuard],
+    // data:{expectedRole:true},
+    component:AdminComponent,
+    
   },
   {
     path:'reports',
+    // canActivate:[RouteGuard],
+    // data:{expectedRole:true},
     component:ReportingComponent
+  },
+  {
+    path:'user',
+    component:UserComponent
   }
   
 ];

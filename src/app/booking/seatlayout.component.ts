@@ -24,13 +24,15 @@ export class SeatlayoutComponent implements OnInit,AfterViewInit {
   public seatStatus:any = [];
   public IsSeatFilled=0;
   public BookSeatData:any =[];
+  public isAdmin:boolean = false;
+  public Data:any;
   @Output() onSeatSelected:EventEmitter<any> = new EventEmitter();
   @Output() onsubmitTicket:EventEmitter<any> = new EventEmitter();
   @ViewChild('seats') seats:ElementRef;
-  constructor(private bookingService:BookingService,private sharedService:SharedService) { 
+  constructor(private bookingService:BookingService,public sharedService:SharedService) { 
     this.ishidTrue = true;
     this.isShowTrue= false;
-
+    this.isAdmin = this.sharedService.IsAdmin();
   }
 
   ngOnInit() {
@@ -50,6 +52,7 @@ public BookedSeats:any;
       Data.forEach(element => {
             this.BookSeatData.push(element.SeatId);
       });
+
       for(var i =0;i<51;i++){
       
         var seatContent = this.seats.nativeElement.children[i];
@@ -61,8 +64,6 @@ public BookedSeats:any;
           seatContent.classList += " ladies";
           else
             seatContent.classList += " booked";
-
-
         }
   
         
@@ -86,9 +87,11 @@ public BookedSeats:any;
 
   bookSeat(evnt)
   {
+    
     if(evnt.target.classList[1] == "booked" || evnt.target.classList[1] == "ladies"){
             return;
     }
+
     if(this.CurentBookedSeats.length>9)
     {
       this.sharedService.ShowWarning("You cant select more than 10 seats in single booking!");
