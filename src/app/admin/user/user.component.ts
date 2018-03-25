@@ -22,6 +22,7 @@ export class UserComponent implements OnInit {
   }
 
   public createUser(){
+    console.log(this.user)
       
     this.registerService.CreateUser(this.user).subscribe(data=>{
         this.sharedService.ShowSuccess("User Created Succesfully")
