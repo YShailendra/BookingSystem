@@ -11,7 +11,13 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
   constructor(private sharedService:SharedService){}
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
-     const dupReq =req;//req.clone({ headers: req.headers.set('Access-Control-Allow-Origin', '*') });//req; //req.clone({ headers: req.headers.set('Authorization', this.sharedService.GetToken()) });
+    var getToken = this.sharedService.GetToken()?this.sharedService.GetToken():'notoken';
+     //const dupReq =req;
+     const dupReq = req.clone({ headers: req.headers.set('Authorization', getToken) });
+    //  const dupReq = req.clone({ headers: req.headers.set('Authorization', "test") });
+     
+     
+     //req.clone({ headers: req.headers.set('Access-Control-Allow-Origin', '*') });//req; //req.clone({ headers: req.headers.set('Authorization', this.sharedService.GetToken()) });
     //  set('Authorization', this.sharedService.GetToken())
     let handleObs: Observable<HttpEvent<any>> = next.handle(dupReq);
     this.sharedService.ShowHideBusyIndicator(true);

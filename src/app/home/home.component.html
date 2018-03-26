@@ -1,150 +1,163 @@
-<div id="page">	
-	<div class="page-inner"> 
-	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(assets/images/img_bg_2.jpg)">
-		<div class="overlay"></div>
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0 text-left">
-					<div class="row less-margin">
-						<div class="col-md-7 mt-text">
-							<h1>Khaira Travels<br>Palia Kalan Kheri</h1>	
-						</div>
-						<div  class="col-md-4 col-md-push-1">
-							<div [@enterAnimation] class="form-wrap form-noborder">
-								<div class="tab">
-									<div class="tab-content nopadding">
-										<div class="tab-content-inner active" data-content="signup">
-											<div class="row">
-												<div class="col-md-12">
-														<h3 class="text-center color-heading header-padding">Book Your Trip</h3>
-												</div>
-											
-											</div>
-											
-											<div  style="padding:20px;">
-												<div class="row form-group">
-													<div class="col-md-12 col-sm-4">
-														<label for="fromCity">From</label>
-														<select  id="fromCity" class="form-control" [(ngModel)]="booking.Source" (change)="OnSelectionChange()">
-															<option value="" selected disabled>Select City</option>
-															<option *ngFor="let c of Options1" [ngValue]="c">{{c}}</option>				
-														</select>
-													</div>
-													
-												</div>
-												<div class="row form-group">
-													<div class="col-md-12">
-														<label for="cityTo">To</label>
-														<select id="cityTo" class="form-control" 
-														[(ngModel)]="booking.Destination" (change)="OnSelectionChange()">
-															<option value="" selected disabled>Select City</option>
-															<option *ngFor="let c of Options2" [ngValue]="c">{{c}}</option>
-															
-														</select>
-													
-													</div>
-												</div>
-												<div class="row form-group">
-													<div class="col-md-12">
-														<label for="date-start">Date Travel</label>
-														<input id="dateTravel" type="date" [(ngModel)]="booking.JourneyDate" [ngModelOptions]="{standalone: true}" min="{{date}}">
-													</div>
-												</div>
-							
-												<div class="row form-group">
-													<div class="col-md-12">
-														<label for="date-return">Return Date</label>
-														<input id="dateReturn" type="date" [(ngModel)]="booking.ReturnJourneyDate" [ngModelOptions]="{standalone: true}">
-													</div>
-												</div>
-												<div class="row form-group">
-													<div class="col-md-12">
-														<input type="submit" 
-														class="btn btn-primary btn-block" 
-														value="Submit" (click)="NextBookingDetails()">
-													</div>
-												</div>
-											</div>	
-										</div>
+<div id="page">
+  <div class="page-inner">
+    <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(assets/images/img_bg_2.jpg)">
+      <div class="overlay"></div>
+      <div class="gtco-container">
+        <div class="row">
+          <div class="col-md-12 col-md-offset-0 text-left">
+            <div class="row less-margin">
+              <div class="col-md-7 mt-text">
+                <h1>Khaira Travels
+                  <br>Palia Kalan Kheri</h1>
+              </div>
+              <div class="col-md-4 col-md-push-1">
+                <div [@enterAnimation] class="form-wrap form-noborder">
+                  <div class="tab">
+                    <div class="tab-content nopadding">
+                      <div class="tab-content-inner active" data-content="signup">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h3 class="text-center color-heading header-padding">Book Your Trip</h3>
+                          </div>
 
-										
-									</div>
-								</div>
+                        </div>
+
+                        <div style="padding:20px;">
+                          <div class="row form-group">
+                            <div class="col-md-12 col-sm-4">
+                              <label for="fromCity">From</label>
+                              <select id="fromCity" class="form-control" [(ngModel)]="booking.Source" (change)="OnSelectionChange()" required #fromCity="ngModel" [ngClass]="{'border': fromCity.errors}">
+                                <option value="" selected disabled>Select City</option>
+                                <option *ngFor="let c of Options1" [ngValue]="c">{{c}}</option>
+							  </select>
 							</div>
-						</div>
-					</div>
-							
-					
-				</div>
-			</div>
-		</div>
-	</header>
-	
-	<div class="gtco-section section-padding">
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>Most Popular Destination</h2>
-					
-				</div>
-			</div>
-			<div class="row">
+							</div>
+                            <div class="row form-group">
+                              <div class="col-md-12">
+                                <label for="cityTo">To</label>
+                                <select id="cityTo" class="form-control" [(ngModel)]="booking.Destination" (change)="OnSelectionChange()">
+                                  <option value="" selected disabled>Select City</option>
+                                  <option *ngFor="let c of Options2" [ngValue]="c">{{c}}</option>
 
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="fh5co-card-item">
-						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="assets/images/img_1.jpg" alt="Image" class="img-responsive">
-						</figure>
-						<div class="fh5co-text">
-							<h2>Delhi</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-							<p><span class="btn btn-primary">Schedule a Trip</span></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="fh5co-card-item">
-						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="assets/images/img_2.jpg" alt="Image" class="img-responsive">
-						</figure>
-						<div class="fh5co-text">
-							<h2>Bareilly</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-							<p><span class="btn btn-primary">Schedule a Trip</span></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="fh5co-card-item">
-						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="assets/images/img_3.jpg" alt="Image" class="img-responsive">
-						</figure>
-						<div class="fh5co-text">
-							<h2>Punjab</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-							<p><span class="btn btn-primary">Schedule a Trip</span></p>
-						</div>
-					</div>
-				</div>
-	
+                                </select>
+
+                              </div>
+                            </div>
+                            <div class="row form-group">
+                              <div class="col-md-12">
+                                <label for="date-start">Date Travel</label>
+                                <input id="dateTravel" type="date" [(ngModel)]="booking.JourneyDate" [ngModelOptions]="{standalone: true}" min="{{date}}"
+                                  class="form-control" required>
+                              </div>
+                            </div>
+
+                            <div class="row form-group">
+                              <div class="col-md-12">
+                                <label for="date-return">Return Date</label>
+                                <input id="dateReturn" type="date" [(ngModel)]="booking.ReturnJourneyDate" [ngModelOptions]="{standalone: true}" class="form-control">
+                              </div>
+                            </div>
+                            <div class="row form-group">
+                              <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-block" value="Submit" (click)="NextBookingDetails()">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
 
 
-	
-	<div id="gtco-counter" class="gtco-section">
-		<div class="gtco-container">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>Khaira Travels</h2>
-						<h3>Palia Kalan</h3>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-				</div>
-			</div>	
-	</div>
 
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <div class="gtco-section section-padding">
+      <div class="gtco-container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+            <h2>Most Popular Destination</h2>
+
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="fh5co-card-item">
+              <figure>
+                <div class="overlay">
+                  <i class="ti-plus"></i>
+                </div>
+                <img src="assets/images/img_1.jpg" alt="Image" class="img-responsive">
+              </figure>
+              <div class="fh5co-text">
+                <h2>Delhi</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
+                <p>
+                  <span class="btn btn-primary">Schedule a Trip</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="fh5co-card-item">
+              <figure>
+                <div class="overlay">
+                  <i class="ti-plus"></i>
+                </div>
+                <img src="assets/images/img_2.jpg" alt="Image" class="img-responsive">
+              </figure>
+              <div class="fh5co-text">
+                <h2>Bareilly</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
+                <p>
+                  <span class="btn btn-primary">Schedule a Trip</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="fh5co-card-item">
+              <figure>
+                <div class="overlay">
+                  <i class="ti-plus"></i>
+                </div>
+                <img src="assets/images/img_3.jpg" alt="Image" class="img-responsive">
+              </figure>
+              <div class="fh5co-text">
+                <h2>Punjab</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
+                <p>
+                  <span class="btn btn-primary">Schedule a Trip</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div id="gtco-counter" class="gtco-section">
+            <div class="gtco-container">
+
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+                  <h2>Khaira Travels</h2>
+                  <h3>Palia Kalan</h3>
+                  <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab
+                    aliquam dolor eius.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="gototop js-top">
+              <a href="#" class="js-gotop">
+                <i class="icon-arrow-up"></i>
+              </a>
+            </div>

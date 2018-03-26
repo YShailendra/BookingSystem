@@ -14,7 +14,7 @@
           <li><a (click)="LoginOpen()">Login</a></li>  
         </ul>	
       </div> -->
-      <nav class="navbar navbar-inverse navbar-fixed-top" *ngIf ="isAdmin">
+      <nav class="navbar navbar-inverse navbar-fixed-top" *ngIf ="!isAdmin">
           <div class="container-fluid">
               <div class="navbar-header">
                   <button type="button" class="navbar-toggle collapsed"  (click)="toggleState()">
@@ -53,10 +53,9 @@
                       <li><a routerLink="">Book Ticket</a></li>
                       <li><a routerLink="booking">Bookings</a></li>
                       <li><a routerLink="cancellation">Cancellation</a></li>
-                      <li><a routerLink="">Users</a></li>
+                      <li><a routerLink="user">Users</a></li>
                       <li><a routerLink="reports">Reports</a></li>
-                     
-                     
+                      <li><a (click)="logout()">Log out</a></li>
                   </ul>
               </div> <!-- #2 -->
           </div>

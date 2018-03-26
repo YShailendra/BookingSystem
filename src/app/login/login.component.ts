@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   @Input() closable = true;
   @Input() visible: boolean;
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  
   //component model
   public Username:string;
   public Password:string;
@@ -40,13 +41,11 @@ export class LoginComponent implements OnInit, OnDestroy {
       var data=s.body as any;
       if(s.status===200)
       {
-        
         console.log(data);
-        if(data.Value)
+        if(data.Token)
         {
-         this.visible=false;
-         this.sharedService.SetToken(data.Value);
-         this.sharedService.ShowSuccess("Successfully Logged-In"); 
+          this.visible=false;
+          this.sharedService.SetLoginInfo(data);
         }
       } 
       else

@@ -1,5 +1,6 @@
 import {Component,OnInit} from '@angular/core';
 import {SharedService} from '../services/shared.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'nav-bar',
@@ -8,16 +9,18 @@ import {SharedService} from '../services/shared.service'
 })
 export class NavBarComponent implements OnInit {
 
-  public isAdmin:boolean =true;
-  constructor(public sharedService:SharedService) { 
+  public isAdmin:boolean;
 
-    // this.isAdmin = this.sharedService.IsAdmin();
-
+  constructor(public sharedService:SharedService,private route:Router) { 
+    this.isAdmin = this.sharedService.IsAdmin();
   }
   showLogin=false;
   ngOnInit() {
+      this.sharedService.isLoggedIn.subscribe(data=>{
+        console.log(data);
+          this.isAdmin = data;
+      })
 
-    
   }
   isIn = false;   // store state
   toggleState() { // click handler
@@ -27,6 +30,11 @@ export class NavBarComponent implements OnInit {
   LoginOpen()
   {
     this.showLogin=true;
+  }
+
+  logout(){
+      this.sharedService.logOut();
+
   }
 
 }

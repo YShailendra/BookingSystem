@@ -1,12 +1,13 @@
 import { Component, OnInit  } from '@angular/core';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { BookingModel } from '../models/booking'
 import { SharedService } from '../services/shared.service';
 import { Router } from '@angular/router';
 import { BookingData } from '../Models/booking-data';
 import { Select2OptionData } from 'ng2-select2';
 import { trigger, animate, state, style, transition,query,stagger,keyframes } from '@angular/animations'
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',

@@ -13,7 +13,6 @@ export class ReportingComponent implements OnInit {
     this.daysOptions = [
         {
           option:"15 days",value:15,
-
         },
         {
           option:"30 days",value:30

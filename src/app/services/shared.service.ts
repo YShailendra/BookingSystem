@@ -1,12 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+
 @Injectable()
 export class SharedService {
 
   private Counter:number=0;
-  constructor(private toastr:ToastrService,private cookieService:CookieService,private spinnerService: Ng4LoadingSpinnerService) { }
+  @Output() public isLoggedIn:EventEmitter<any> = new EventEmitter<any>();
+  constructor(private toastr:ToastrService,private cookieService:CookieService,private spinnerService: Ng4LoadingSpinnerService,private route:Router) { }
   public ShowHideBusyIndicator(isShow)
   {
    if(isShow)
@@ -32,13 +35,37 @@ export class SharedService {
   }
   public GetToken()
   {
+    console.log(this.cookieService.get("token"));
     return this.cookieService.get("token");
 
   }
 
   public IsAdmin(){
-    return true;
+    return this.cookieService.get("Role")=='true'?true:false;
+
   }
+
+  public SetRole(value){
+      this.cookieService.put("Role",value);
+  }
+
+  public SetLoginInfo(data){
+    console.log(data);
+    this.SetToken(data.Token);
+    this.SetRole(data.IsAdmin);
+    this.ShowSuccess("Successfully Logged-In"); 
+    if(data.IsAdmin){
+     this.isLoggedIn.emit(data.IsAdmin);
+        this.route.navigate(['/admin']);
+    }
+  }
+
+  public logOut(){
+      this.cookieService.removeAll();
+      this.route.navigate(['']);
+      this.isLoggedIn.emit(false);
+  }
+
 
   public GetRouteData()
   {
