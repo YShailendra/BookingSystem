@@ -1920,10 +1920,10 @@ option{
   -moz-box-shadow: 9px 7px 5px -4px rgba(0,0,0,1);
   box-shadow: 9px 7px 5px -4px rgba(0,0,0,1);
 }
-.bus-col{
-  border: 1px solid lightgrey;
+.bus-col {
+  border: 1px solid black;
   color: white;
-  margin-top: 6px;
   background: black;
-  line-height:45px;
+  line-height: 45px;
+  padding: 0px;
 }
