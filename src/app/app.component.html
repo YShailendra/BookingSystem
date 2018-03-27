@@ -4,7 +4,7 @@
 <!-- <ng4-loading-spinner [threshold]="2000" [template]="template" [loadingText]="'Please wait...'" [zIndex]="9999"></ng4-loading-spinner> -->
 <router-outlet></router-outlet>
 
-<app-footer></app-footer>
+<app-footer *ngIf="!isAdmin"></app-footer>
 
 <!-- <app-home></app-home> -->
   

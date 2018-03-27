@@ -44,6 +44,11 @@ input[type='date']
 }
 
 .border{
-        border-left: 5px solid red ; /* green */
+    border-left: 4px solid red;
    
+
+}
+
+.removeborder{
+    border-left:0px solid;
 }
