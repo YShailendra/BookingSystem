@@ -10,8 +10,9 @@ input{
 }
 .bus-grid{
     padding: 8px;
-    border-bottom: 1px solid black;
+    border: 1px solid black;
     color:black;
+    border-top:none;
 }
 .vis{
     display: inline;

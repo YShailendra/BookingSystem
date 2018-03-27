@@ -1,4 +1,4 @@
-<div class="row section-padding">
+ <div class="row section-padding"git>
     <div class="container"> 
     <div class="col-sm-5" style="border:1px black solid">
         <h2 class="text-center">Passenger Details</h2> 
@@ -25,12 +25,12 @@
         <hr>
         <span>Mobile Number:</span><span>{{Data.PhoneNo}}</span>
         <hr>
-        <span>Email:Number</span><span>{{Data.Email}}</span>
+        <span>Email:</span><span>{{Data.Email}}</span>
         <hr>
         <p><span>Seats:</span>
           <span *ngFor="let seat of Data.BookedSeatDetails">{{seat.SeatId}},</span></p>
           <hr>
-          <p><span>Total Amount</span><span>{{Data.TotalAmount}}</span>
+          <p><span>Total Amount:</span><span>{{Data.TotalAmount}}</span>
           </p>
           <hr>
           
@@ -39,3 +39,4 @@
   </div>
 
 </div>
+
