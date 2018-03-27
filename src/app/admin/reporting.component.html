@@ -1,47 +1,49 @@
-
-
-<div class="row">
-    <div class="container">
-        <h2 class="text-center">Reports</h2>
+<div class="container">
+<div class="row text-center" style="border:1px solid black;margin-top: 79px;">
+        <h2 class="text-center">Repo<span class="mycolor">rts</span></h2>
         <div class="col-md-12">
-          <div class="col-md-5">
+          <div class="row">
+          <div class="col-md-5 col-md-push-1">
               <label for="date-start"> Select Date</label>
               <input id="dateTravel" class="form-control" type="date">
           </div>
           <div class="col-md-5 col-md-push-1">
-              <label for="fromCity">Last</label>
+              <label for="fromCity">Last Days</label>
               <select  id="fromCity" class="form-control" (change)="OnSelectionChange()">
                 <option value="" selected disabled>Select City</option>
                 <option *ngFor="let c of daysOptions" [ngValue]="c.value">{{c.option}}</option>				
               </select>
           </div>
-        </div>
-        <div class="col-md-12 ">
-            <span class="col-md-4">
+          </div>
+        
+        <div class="row">
+            <div class="col-md-4">
                 <label for="fromCity">From</label>
                 <select  id="fromCity" class="form-control"  (change)="OnSelectionChange()">
                   <option value="" selected disabled>Select City</option>
                   <option *ngFor="let c of Option1" [ngValue]="c">{{c}}</option>				
                 </select>
-            </span>
-            <span class="col-md-4">
+              </div>
+            <div class="col-md-4">
                 <label for="fromCity">To</label>
                 <select  id="fromCity" class="form-control" (change)="OnSelectionChange()">
                   <option value="" selected disabled>Select City</option>
                   <option *ngFor="let c of Option2" [ngValue]="c">{{c}}</option>				
                 </select>
-            </span>
-            <span class="col-md-4">
+              </div>
+            <div class="col-md-4">
                     <label for="date-start">Date Travel</label>
                     <input id="dateTravel" class="form-control" type="date">
-            </span>
-            <p></p>
-          </div>
-          <div class="col-md-12">
-            <div class="col-md-4">
-             <button class="btn btn-primary text-center" value="Generate Report"> Generate Report</button>
             </div>
+            
           </div>
+          <div class="row section-padding">
+            <div class="col-md-4 col-md-push-5">
+             <button class="btn btn-primary text-center" value="Generate Report"> Generate Report</button>
+          </div>
+        </div>
 
-    </div>
+
+  </div>
+  </div>
   </div>

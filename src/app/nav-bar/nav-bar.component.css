@@ -10,3 +10,7 @@
     color: white;
     font-size: xx-large;
 }
+
+#login:hover{
+    cursor: pointer;
+}

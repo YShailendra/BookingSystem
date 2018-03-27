@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
   
   public travelDate:any = new Date();
   public returnDate:any = new Date();
-  public date:any;
+  public todaysdate:any;
   public booking:BookingData;
   public Options1=[];
   public Options2=[];
@@ -42,8 +42,8 @@ export class HomeComponent implements OnInit {
          this.Options2=this.sharedService.GetRouteData();
          this.booking.Source="";
          this.booking.Destination="";
-         this.date = new Date();
-
+         this.todaysdate = new Date();
+         this.booking.JourneyDate =  new Date().toString().split('T')[0] as any;
          
    }
 

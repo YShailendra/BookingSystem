@@ -1,16 +1,4 @@
-<!-- 
-<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(images/img_bg_3.jpg)">
-  <div class="overlay"></div>
-  <div class="gtco-container">
-    <div class="row">
-      <div class="col-md-12 col-md-offset-0 text-left">
-        <div class="row row-mt-15em">
-        </div>
-      </div>
-    </div>
-  </div>
-</header> -->
-<div id="gtco-counter" class="gtco-section bussearch">
+<div id="gtco-counter" class="gtco-section bussearch section-padding">
   <div class="row" style="display:inline;">
     <div class="col-md-3 text-center">
         <button class="btn btn-primary">Return</button>
@@ -55,11 +43,11 @@
   
 </div>
 
-<div id="gtco-counter" class="gtco-section section-padding">
-  
+<div id="gtco-counter" class="gtco-section">
+  <div class="container">
     <div class="row" style="display:inline;">
         <h3 class="text-center">Seats <span class="mycolor">Status</span></h3>
-      <div class="col-md-12" style="    line-height: 40px;">
+      <div class="col-md-12" style="line-height: 40px;">
       <div class="col-md-2 text-center" style="border:1px solid black;background:#EEEEEE;color:black;">
         Upper Berth-UP-B
       </div>
@@ -85,23 +73,24 @@
   </div>
 </div>
 </div>
+</div>
+
 <div id="gtco-counter" class="gtco-section section-padding">
-
-  <div class="container ">
-
+  <div class="container">
   <div class="row">
-    <div>
+    
       <div class="col-md-12 bus-col">
-      <div class="col-md-5">Route Name</div>
+      <div class="col-md-4">Route Name</div>
       <div class="col-md-1">Departure</div>
       <div class="col-md-1">Arrival</div>
       <div class="col-md-2">Fare</div>
       <div class="col-md-1">Vacant</div>
       <div class="col-md-2 text-center">Book</div>
-    </div>
+    
     </div>
   </div>
   <div class="row" *ngFor = "let bus of BusDetail">
+    
       <div class="col-md-12 bus-grid">
         <div class="col-md-5">Palia To Delhi 2 X 2 (51) Seat - Sleeper A/C
           <p>Luxury AC / Seater - Sleeper</p>
@@ -126,22 +115,7 @@
     
    
   </div>
-  <!-- <div class="row">
-    
-      <div class="col-md-12 bus-grid" >
-        <div class="col-md-5">Palia To Delhi 2 X 2 (51) Seat - Sleeper A/C
-          <p>Luxury AC / Seater - Sleeper</p>
-        </div>
-        <div class="col-md-1">4:30 am</div>
-        <div class="col-md-1">6:00 am</div>
-        <div class="col-md-2">500/600/700</div>
-        <div class="col-md-1">dynamic contetn</div>
-        <div class="col-md-2">
-          <button class="btn btn-primary">Book</button>
-        </div>
-      </div>
-    </div> -->
-  
+ 
   </div>
 
   

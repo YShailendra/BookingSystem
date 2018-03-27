@@ -738,7 +738,7 @@ form label {
 #gtco-subscribe,
 #gtco-footer,
 .gtco-section {
-  /* padding: 2em 0; */
+  padding: 2em 0;
   clear: both;
   position: relative;
 }

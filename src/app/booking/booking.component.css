@@ -12,7 +12,7 @@ input{
     padding: 8px;
     border: 1px solid black;
     color:black;
-    border-top:none;
+    
 }
 .vis{
     display: inline;
@@ -21,6 +21,8 @@ input{
 .hid{
     display: none;
 }
+
+
 /* Seat layout */
 .rfv {
     /*color: #fff !important;*/
@@ -737,4 +739,9 @@ a {
 .seat a{
     color:black;
 }
+
+.busdetailrow{
+        border-top:1px solid;
+}
+
 

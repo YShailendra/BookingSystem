@@ -46,8 +46,7 @@
                             <div class="row form-group">
                               <div class="col-md-12">
                                 <label for="date-start">Date Travel</label>
-                                <input id="dateTravel" type="date" [(ngModel)]="booking.JourneyDate" [ngModelOptions]="{standalone: true}" min="{{date}}"
-                                  class="form-control" required>
+                                <input id="dateTravel" type="date" [(ngModel)]="booking.JourneyDate" [ngModelOptions]="{standalone: true}" min="{{date}}" class="form-control" ng-value="todaysdate"  required>
                               </div>
                             </div>
 

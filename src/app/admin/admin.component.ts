@@ -45,6 +45,7 @@ export class AdminComponent implements OnInit {
     Object.assign(data2,this.sharedService.GetRouteData());
     this.Option1 = data.filter(s=>s!=this.booking.Destination);
     this.Option2 = data2.filter(s=>s!=this.booking.Source);
+    
   }
 
   OnRouteSelectionChange(){

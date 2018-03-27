@@ -897,7 +897,7 @@ pre code {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
-  padding-right: 15px;
+  /* padding-right: 15px; */
 }
 .container-fluid:before, .container-fluid:after {
   content: " ";
@@ -908,8 +908,8 @@ pre code {
 }
 
 .row {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -15px; 
+   margin-right: -15px;
 }
 .row:before, .row:after {
   content: " ";
@@ -1256,7 +1256,7 @@ pre code {
   }
 
   .col-sm-push-4 {
-    left: 33.33333%;
+    left: 30.33333%;
   }
 
   .col-sm-push-5 {
