@@ -5,8 +5,13 @@
     padding: 1%;">
         <h3 class="text-center">Passenger Details</h3>
         <div class="col-sm-12">
+          <span>Date of Journey:</span><span><strong>{{Data.JourneyDate}}</strong></span>
+          <br>
+          <span>Source:</span><span><strong>{{Data.Source}}</strong></span>
+        </div>
+        <div class="col-sm-12">
         <span>Seats:</span><span *ngFor="let seat of Data.BookedSeatDetails">{{seat.SeatId}},</span>
-        <span>Total Amount:</span><span>{{Data.TotalAmount}}</span>
+        <span>Total Amount:</span><span><strong>{{Data.TotalAmount}}</strong></span>
         </div>
             <div class="form-group">
               <label for="passenger_name">Name</label>

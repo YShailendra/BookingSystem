@@ -25,22 +25,19 @@ export class TicketComponent implements OnInit {
 
   public Data:BookingData;
   public totalAmount:any;
+  public Source:any;
+  public JourneyDate:any;
+
   constructor(private sharedService:SharedService,private service:BookingService) {
     this.Data= new BookingData();
-    
-
    }
- 
-  
-
   ngOnInit() {
+    this.Source=this.Data.Source;
+    this.JourneyDate = this.Data.JourneyDate;
   }
   //Submit ticket details
   SubmitBookingDetails()
   {
-
-      
-
     //BookedSeats
     this.Data.BookedSeats= JSON.stringify(this.Data.BookedSeatDetails);
     this.service.BookTicket(this.Data).subscribe(success=>{
