@@ -93,27 +93,14 @@ public BookedSeats:any;
             return;
     }
 
-    if(this.CurentBookedSeats.length>9)
-    {
-      
-        this.CurentBookedSeats.forEach( (item, index) => {
-          if(item === find) 
-          {
-            this.CurentBookedSeats.splice(index,1);
-           console.log(evnt.target.classList)
-           evnt.target.classList="divseat";
-            
-          }
-          else{
-
-          }
-
-        });
+    if(this.CurentBookedSeats.length>9 && !IsExist)
+    { 
+      this.sharedService.ShowWarning("You can not select more than 10 seats");
       }
     else{
-      console.log(evnt.target.innerText)
-      var find =this.SeatsData.find(f=>f.SeatId==evnt.target.innerText);
-      var IsExist= this.CurentBookedSeats.find(f=>f.SeatId==evnt.target.innerText);
+      
+      // var find =this.SeatsData.find(f=>f.SeatId==evnt.target.innerText);
+      // var IsExist= this.CurentBookedSeats.find(f=>f.SeatId==evnt.target.innerText);
       if(find &&!IsExist)
       {
         find['Gender']='';

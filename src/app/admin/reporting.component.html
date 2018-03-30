@@ -1,50 +1,50 @@
 <div class="container">
-<div class="row text-center" style="border:1px solid black;margin-top: 79px;">
-        <h2 class="text-center">Repo<span class="mycolor">rts</span></h2>
-        <div class="col-md-12">
-          <div class="row">
-              <div class="col-md-4 col-md-push-2">
-                  <label for="routeInformation">Select Route</label>
-                  <select  id="routeInformation" class="form-control" [(ngModel)]= "selectedRoute" (change)="OnRouteSelectionChange()">
-                    <option value="" selected disabled>Select Route</option>
-                    <option *ngFor="let c of Routes" value={{c.ID}}>{{c.RouteName}}</option>				
-                  </select>
-               </div>
-          
-          <div class="col-md-4 col-md-push-2">
-              <label for="busInformation">Select Bus</label>
-              <select  id="busInformation" class="form-control"  (change)="OnBusSelectionChange()" [(ngModel)]="reporting.BusID">
-                <option value="" selected disabled>Select Bus</option>
-                <option *ngFor="let c of Bus" [ngValue]="c.ID">{{c.BusDescription}}</option>				
-              </select>
-          </div>
-          </div>
-        
-        <div class="row">
-            <div class="col-md-4 col-md-push-2">
-                    <label for="date-start">Report By Date Travel</label>
-                    <input id="dateTravel" class="form-control" type="date" [(ngModel)]="reporting.JourneyDate" [disabled]="disableDate" (change)="OnDateSelectionChange()">
-                 </div>
-              
-            <div class="col-md-4 col-md-push-2">
-                <label for="fromCity">Reports by days</label>
-                <select  id="fromCity" class="form-control" (change)="OnSelectionChange()" [(ngModel)]="reporting.Days" [disabled]="disableDays" >
-                  <option value="" selected disabled >Select Days</option>
-                  <option *ngFor="let c of daysOptions" [ngValue]="c">"{{c}} days"</option>				
-                </select>
-              </div>
-            <div class="col-md-4">
-                  
-            </div>
-            
-          </div>
-          <div class="row section-padding">
-            <div class="col-md-4 col-md-push-5">
-             <button class="btn btn-primary text-center" value="Generate Report" (click)="generateReports()"> Generate Report</button>
-          </div>
+  <div class="row text-center" style="margin-top:6%;">
+    <div>
+    <h2 class="text-center">Repo
+      <span class="mycolor">rts</span>
+    </h2>
+    <div class="col-md-8 col-md-push-2">
+        <div class="card">
+      
+      <div class="row">
+        <div class="col-md-6 form-padding">
+          <label for="routeInformation">Select Route</label>
+          <select id="routeInformation" class="form-control" [(ngModel)]="selectedRoute" (change)="OnRouteSelectionChange()">
+            <option value="" selected disabled>Select Route</option>
+            <option *ngFor="let c of Routes" value={{c.ID}}>{{c.RouteName}}</option>
+          </select>
         </div>
 
+        <div class="col-md-6 form-padding">
+          <label for="busInformation">Select Bus</label>
+          <select id="busInformation" class="form-control" (change)="OnBusSelectionChange()" [(ngModel)]="reporting.BusID">
+            <option value="" selected disabled>Select Bus</option>
+            <option *ngFor="let c of Bus" [ngValue]="c.ID">{{c.BusDescription}}</option>
+          </select>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="col-md-6 form-padding">
+          <label for="date-start">Report By Date Travel</label>
+          <input id="dateTravel" class="form-control" type="date" [(ngModel)]="reporting.JourneyDate" [disabled]="disableDate" (change)="OnDateSelectionChange()">
+        </div>
+        <div class="col-md-6 form-padding">
+          <label for="fromCity">Reports by days</label>
+          <select id="fromCity" class="form-control" (change)="OnSelectionChange()" [(ngModel)]="reporting.Days" [disabled]="disableDays">
+            <option value="" selected disabled>Select Days</option>
+            <option *ngFor="let c of daysOptions" [ngValue]="c">"{{c}} days"</option>
+          </select>
+        </div>
+      </div>
+      <div class="row section-padding">
+        <div class="col-md-4 col-md-push-4">
+          <button class="btn btn-primary text-center" value="Generate Report" (click)="generateReports()"> Generate Report</button>
+        </div>
+      </div>
+
+</div>
+    </div>
   </div>
-  </div>
-  </div>
+</div>
