@@ -59,7 +59,6 @@ export class BookingService {
       seats.push(uSleeper1);
 
     }
-    console.log(seats)
     return seats;
   }
 

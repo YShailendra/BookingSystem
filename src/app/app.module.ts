@@ -33,6 +33,7 @@ import { BusService} from './services/bus.service';
 import { RegisterService } from './services/register.service';
 import { ReportingComponent } from './admin/reporting.component';
 import { UserComponent } from '../app/admin/user/user.component';
+import { ReportingService } from '../app/services/reporting.service';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,7 @@ import { UserComponent } from '../app/admin/user/user.component';
     Select2Module, //select2 
   ],
   providers: [LoginService,
-              SharedService,CookieService,BookingService,BusService,RegisterService],
+              SharedService,CookieService,BookingService,BusService,RegisterService,ReportingService],
               bootstrap: [AppComponent],
   })
   

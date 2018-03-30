@@ -10,15 +10,15 @@ export class ReportingService {
 
 
   public getReportByDate(data){
-    this.httpClient.get(environment.ApiUrl+"reportbydate?date="+data);
+    return this.httpClient.get(environment.ApiUrl+"reportbydate?date="+data);
   }
 
   public getReportByDays(data){
-    this.httpClient.get(environment.ApiUrl+"reportbydate?days="+data);
+    return this.httpClient.get(environment.ApiUrl+"reportbydate?days="+data);
   }
 
   public getReportByBus(data){
-    this.httpClient.get(environment.ApiUrl+"getreportbybus?busid="+data);
+    return this.httpClient.get(environment.ApiUrl+"getreportbybus?busid="+data);
   }
 
 }

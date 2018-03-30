@@ -47,7 +47,7 @@ public BookedSeats:any;
   GetBookedSeats()
   {
     this.bookingService.GetBookedSeats(this.BookingModel).subscribe(s=>{
-      // console.log(s);
+      console.log(s);
       var Data=s as any;
       Data.forEach(element => {
             this.BookSeatData.push(element.SeatId);
@@ -87,16 +87,30 @@ public BookedSeats:any;
 
   bookSeat(evnt)
   {
-    
+    var find =this.SeatsData.find(f=>f.SeatId==evnt.target.innerText);
+    var IsExist= this.CurentBookedSeats.find(f=>f.SeatId==evnt.target.innerText);
     if(evnt.target.classList[1] == "booked" || evnt.target.classList[1] == "ladies"){
             return;
     }
 
     if(this.CurentBookedSeats.length>9)
     {
-      this.sharedService.ShowWarning("You cant select more than 10 seats in single booking!");
-    }
-   else {
+      
+        this.CurentBookedSeats.forEach( (item, index) => {
+          if(item === find) 
+          {
+            this.CurentBookedSeats.splice(index,1);
+           console.log(evnt.target.classList)
+           evnt.target.classList="divseat";
+            
+          }
+          else{
+
+          }
+
+        });
+      }
+    else{
       console.log(evnt.target.innerText)
       var find =this.SeatsData.find(f=>f.SeatId==evnt.target.innerText);
       var IsExist= this.CurentBookedSeats.find(f=>f.SeatId==evnt.target.innerText);

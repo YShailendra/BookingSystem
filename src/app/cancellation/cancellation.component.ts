@@ -21,6 +21,7 @@ export class CancellationComponent implements OnInit {
   cancelTicket(){
         this.bookingService.CancelTicket(this.booking).subscribe(data=>{
               this.response = data;
+              this.sharedService.ShowSuccess("Ticket Booked Successfuly");
         },error=>{this.sharedService.ShowError("Unable to Cancel Ticket")})
   }
 
