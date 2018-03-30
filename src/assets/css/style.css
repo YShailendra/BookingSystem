@@ -16,7 +16,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #777;
-  background: #fff;
+  /* background: #fff; */
 }
 
 #page {
@@ -65,7 +65,7 @@ p {
 h1, h2, h3, h4, h5, h6, figure {
   color: #000;
   font-family: "Lato", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0 0 20px 0;
 }
 
@@ -97,11 +97,13 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 0;
   left: 0;
   margin: 0;
-  padding: 0;
   width: 100%;
   padding: 20px 0;
-  z-index: 1001;
+  z-index: 1024;
+  padding: 13px;
 }
+
+
 @media screen and (max-width: 768px) {
   .gtco-nav {
     padding: 20px 0;
@@ -119,7 +121,8 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .gtco-nav a {
   padding: 5px 10px;
-  color: #fff;
+  color:white !important;
+  /* color: #fff; */
 }
 @media screen and (max-width: 768px) {
   .gtco-nav .menu-1, .gtco-nav .menu-2 {
@@ -139,7 +142,8 @@ h1, h2, h3, h4, h5, h6, figure {
 .gtco-nav ul li a {
   font-size: 21px;
   padding: 30px 10px;
-  color: rgba(255, 255, 255, 0.7);
+  /* color: rgba(255, 255, 255, 0.7); */
+  color:#09C6AB;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -237,12 +241,12 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #gtco-header {
-  background: #4d4d4d;
+  background:cornflowerblue;
 }
 @media screen and (max-width: 992px) {
   #gtco-header.gtco-cover {
     height: inherit !important;
-    padding: 3em 0 !important;
+    padding: 1em 0 !important;
   }
 }
 @media screen and (max-width: 480px) {
@@ -289,6 +293,7 @@ h1, h2, h3, h4, h5, h6, figure {
     font-size: 34px;
     line-height: 1.2;
     margin-bottom: 10px;
+    margin-top: 37px;
   }
 }
 #gtco-header h2 {
@@ -298,7 +303,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 30px;
 }
 #gtco-header .form-wrap {
-  border-top: 10px solid #09C6AB;
+  border-top: 6px solid #09C6AB;
   position: relative;
   width: 100%;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
@@ -350,7 +355,7 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   clear: both;
   background: #fff;
-  padding: 30px;
+  /* padding: 2px; */
 }
 #gtco-header .form-wrap .tab-content .tab-content-inner {
   display: none;
@@ -482,7 +487,7 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 .gtco-cover.gtco-cover-sm {
-  height: 600px;
+  height: 68px;
 }
 @media screen and (max-width: 768px) {
   .gtco-cover.gtco-cover-sm {
@@ -733,7 +738,7 @@ form label {
 #gtco-subscribe,
 #gtco-footer,
 .gtco-section {
-  padding: 0em 0;
+  padding: 2em 0;
   clear: both;
   position: relative;
 }
@@ -1018,8 +1023,8 @@ form label {
 }
 #gtco-footer .copyright {
   color: #b3b3b3;
-  padding-top: 3em;
-  margin-top: 3em;
+  
+  
   border-top: 1px solid #f2f2f2;
 }
 @media screen and (max-width: 768px) {
@@ -1257,9 +1262,9 @@ form label {
   border-bottom: none !important;
 }
 @media screen and (max-width: 768px) {
-  .gtco-nav-toggle {
+  /* .gtco-nav-toggle {
     display: block;
-  }
+  } */
 }
 
 .btn {
@@ -1289,7 +1294,7 @@ form label {
 }
 
 .btn-primary {
-  background: #09C6AB;
+  background:#09C6AB;
   color: #fff;
   border: 2px solid #09C6AB !important;
 }
@@ -1446,7 +1451,7 @@ form label {
   box-shadow: none;
   background: transparent;
   border: 2px solid rgba(0, 0, 0, 0.1);
-  height: 46px;
+  height: 45px;
   font-size: 16px;
   font-weight: 300;
   padding-left: 15px;
@@ -1888,4 +1893,37 @@ form label {
   }
 }
 
+.less-margin{
+  margin-top:7%;
+}
+
+.position-fixed{
+  position: relative;
+}
+
 /*# sourceMappingURL=style.css.map */
+
+.mycolor{
+color:cornflowerblue !important; 
+}
+
+label{
+  color: black;
+}
+
+option{
+  color:black;
+  /* background: aqua; */
+}
+.shadow-bus{
+  -webkit-box-shadow: 9px 7px 5px -4px rgba(0,0,0,1);
+  -moz-box-shadow: 9px 7px 5px -4px rgba(0,0,0,1);
+  box-shadow: 9px 7px 5px -4px rgba(0,0,0,1);
+}
+.bus-col {
+  border: 1px solid black;
+  color: white;
+  background: black;
+  line-height: 45px;
+  padding: 0px;
+}

@@ -1,0 +1,27 @@
+<div class="container">
+<div class="row">
+
+    <div class="col-md-6 col-md-push-3 section-padding" style="padding-top:70px;">
+      <div class="card">
+      
+          <h1 class="text-center">My <span class="mycolor">Booking</span></h1>
+        <div class="form-group">
+          <label>Booking Number</label>
+          <input type="text" class="form-control" required [(ngModel)]="booking.BookingNumber">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" class="form-control" [(ngModel)]="booking.Email">
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" (click)="checkBookingStatus()">Submit</button>
+        </div>
+      
+      
+      </div>
+
+
+      
+  </div>
+</div>
+</div>

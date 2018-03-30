@@ -1,0 +1,16 @@
+.nav-font a{
+    color:white;
+    font-size:larger;
+}
+.nav-font{
+    float: right;
+}
+
+.nav-logo{
+    color: white;
+    font-size: xx-large;
+}
+
+#login:hover{
+    cursor: pointer;
+}

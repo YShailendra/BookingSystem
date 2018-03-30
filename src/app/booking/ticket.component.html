@@ -1,0 +1,36 @@
+ <div class="row section-padding">
+    <div class="container"> 
+    <div class="col-sm-5 col-sm-push-4" style="border: 1px black solid;
+    margin: 1%;
+    padding: 1%;">
+        <h3 class="text-center">Passenger Details</h3>
+        <div class="col-sm-12">
+          <span>Date of Journey:</span><span><strong>{{Data.JourneyDate}}</strong></span>
+          <br>
+          <span>Source:</span><span><strong>{{Data.Source}}</strong></span>
+        </div>
+        <div class="col-sm-12">
+        <span>Seats:</span><span *ngFor="let seat of Data.BookedSeatDetails">{{seat.SeatId}},</span>
+        <span>Total Amount:</span><span><strong>{{Data.TotalAmount}}</strong></span>
+        </div>
+            <div class="form-group">
+              <label for="passenger_name">Name</label>
+              <input type="text" [(ngModel)]="Data.Name" class="form-control" id="passenger_name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" [(ngModel)]="Data.Email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label for="mobile_number">Mobile</label>
+                <input type="text" [(ngModel)]="Data.PhoneNo" class="form-control" id="mobile_number">
+              </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary" (click)="SubmitBookingDetails()">Submit</button>
+              <button type="submit" class="btn btn-danger" (click)="BackToSeat()">Go Back</button>
+            </div>
+    </div>
+  </div>
+
+</div>
+
