@@ -3,6 +3,7 @@ import { BookingService } from '../services/booking.service';
 import { SharedService } from '../services/shared.service';
 import {BookingModel} from '../Models/booking';
 import {DetailComponent} from '../booking/detail.component'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-seatlayout',
@@ -29,7 +30,7 @@ export class SeatlayoutComponent implements OnInit,AfterViewInit {
   @Output() onSeatSelected:EventEmitter<any> = new EventEmitter();
   @Output() onsubmitTicket:EventEmitter<any> = new EventEmitter();
   @ViewChild('seats') seats:ElementRef;
-  constructor(private bookingService:BookingService,public sharedService:SharedService) { 
+  constructor(private bookingService:BookingService,public sharedService:SharedService,public route:Router) { 
     this.ishidTrue = true;
     this.isShowTrue= false;
     this.isAdmin = this.sharedService.IsAdmin();
@@ -143,10 +144,30 @@ public BookedSeats:any;
   submitTicket1(){
     this.onsubmitTicket.emit(this.CurentBookedSeats);
   }
+
+  SubmitBookingDetails(){
+    console.log(this.Data);
+    this.Data.BookedSeats= JSON.stringify(this.Data.BookedSeatDetails);
+   
+    this.bookingService.BookTicket(this.Data).subscribe(success=>{
+      var Data=success as any;
+      console.log(Data.ClientData.BookingNumber);
+      if(!Data.HasError)
+      {
+        this.Data = Data.ClientData;
+        this.sharedService.ShowSuccess("Ticket booked successfully");
+          this.route.navigate['/admin'];
+    }
+      
+      
+    },error=>{ console.log(error); this.sharedService.ShowError("Error in booking the ticket") })
+
+  }
  
- 
+
+  }
 
 
 
 
-}
+

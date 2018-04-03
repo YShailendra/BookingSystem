@@ -352,12 +352,12 @@
         <h2 class="text-center">Passenger Details</h2>
         <div class="form-group">
           <label>Name</label>
-          <input type="text" [(ngModel)]="BookingModel.Name" class="form-control" required>
+          <input type="text" [(ngModel)]="Data.Name" class="form-control" required>
         </div>
 
         <div class="form-group">
           <label>Mobile</label>
-          <input type="text" [(ngModel)]="BookingModel.PhoneNo" class="form-control">
+          <input type="text" [(ngModel)]="Data.PhoneNo" class="form-control">
         </div>
 
         <div class="row" *ngFor="let seat of CurentBookedSeats;let j=index;">
@@ -366,7 +366,7 @@
               <span style="float:right;">{{seat.SeatId}} - Gender</span>
             </div>
             <div class="col-sm-8">
-              <select [(ngModel)]="seat.Gender">
+              <select [(ngModel)]="Data.Gender">
                 <option selected disabled>-choose-</option>
                 <option>Male</option>
                 <option>Female</option>

@@ -3,9 +3,11 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { Angular5Csv } from 'angular5-csv/Angular5-csv';
 
 @Injectable()
 export class SharedService {
+  
 
   private Counter:number=0;
   @Output() public isLoggedIn:EventEmitter<any> = new EventEmitter<any>();
@@ -101,6 +103,21 @@ export class SharedService {
     message=message?message:"Info message!";
     this.toastr.info(message);
   }
+
+  ExportToExcel(data:any,filename:string){
+    var options = { 
+      fieldSeparator: ',',
+      quoteStrings: '"',
+      decimalseparator: '.',
+      showLabels: true, 
+      showTitle: true,
+      useBom: true,
+      noDownload: false,
+      headers: ['Name','Email','Source','Destination','Mobile','Booking Number','Seats','Journey']
+    };
+    new Angular5Csv(data,filename,options);
+  }
+  
 
 
 }

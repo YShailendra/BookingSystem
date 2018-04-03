@@ -5,6 +5,7 @@ import { BookingData } from '../Models/booking-data';
 import { BusService } from '../services/bus.service';
 import { ReportingService } from '../services/reporting.service';
 import { ReportingModel } from '../Models/reporting';
+import { Angular5Csv } from 'angular5-csv/Angular5-csv';
 
 @Component({
   selector: 'app-reporting',
@@ -22,6 +23,7 @@ export class ReportingComponent implements OnInit {
     public reportData:any;
     public disableDate;
     public disableDays;
+
     
   constructor(private sharedService:SharedService,private busService:BusService,private reportingService:ReportingService) {
 
@@ -67,14 +69,12 @@ export class ReportingComponent implements OnInit {
     
   }
 
+
   generateReports(){
-
-      if(this.reporting.Days){
-          
-        this.reportingService.getReportByDays(this.reporting).subscribe(data=>{
+        this.reportingService.getReportByDate(this.reporting).subscribe(data=>{
                 this.reportData = data;
+                if(data)
+                this.sharedService.ExportToExcel(this.reportData,"exporttoexccel"+(new Date()).toDateString());
         });
-      }
-
   }
 }

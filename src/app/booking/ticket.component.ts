@@ -40,6 +40,7 @@ export class TicketComponent implements OnInit {
   {
     //BookedSeats
     this.Data.BookedSeats= JSON.stringify(this.Data.BookedSeatDetails);
+    
     this.service.BookTicket(this.Data).subscribe(success=>{
       var Data=success as any;
       console.log(Data.ClientData.BookingNumber);

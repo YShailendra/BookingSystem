@@ -10,15 +10,15 @@ export class ReportingService {
 
 
   public getReportByDate(data){
-    return this.httpClient.get(environment.ApiUrl+"reportbydate?date="+data);
+    return this.httpClient.get(environment.ApiUrl+"Booking/GetReport?date="+data.JourneyDate+"&busid="+data.BusID+"&days="+data.Days);
   }
 
-  public getReportByDays(data){
-    return this.httpClient.get(environment.ApiUrl+"reportbydate?days="+data);
-  }
+  // public getReportByDays(data){
+  //   return this.httpClient.get(environment.ApiUrl+"reportbydate?days="+data);
+  // }
 
-  public getReportByBus(data){
-    return this.httpClient.get(environment.ApiUrl+"getreportbybus?busid="+data);
-  }
+  // public getReportByBus(data){
+  //   return this.httpClient.get(environment.ApiUrl+"getreportbybus?busid="+data);
+  // }
 
 }

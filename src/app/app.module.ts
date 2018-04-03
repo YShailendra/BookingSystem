@@ -7,6 +7,8 @@ import { HttpModule } from '@angular/http';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { InterceptorModule } from './interceptor.module';
 import { Select2Module } from 'ng2-select2';
+import { Angular5Csv } from 'angular5-csv/Angular5-csv';
+
 
 //local component
 import { AppComponent } from './app.component';

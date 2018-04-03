@@ -116,6 +116,7 @@ public BookedSeats:any;
       }
       this.bookingData.TotalAmount = amnt;
   }
+  
   back(bus){
     var bus = this.BusDetail.find(s=>s.ID == this.bookingData.BusID);
       if(bus){

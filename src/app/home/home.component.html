@@ -19,14 +19,12 @@
                           <div class="col-md-12">
                             <h3 class="text-center color-heading header-padding">Book Your Trip</h3>
                           </div>
-
                         </div>
-
                         <div style="padding:20px;">
                           <div class="row form-group">
                             <div class="col-md-12 col-sm-4">
                               <label for="fromCity">From</label>
-                              <select id="fromCity" class="form-control" [(ngModel)]="booking.Source" (change)="OnSelectionChange()" required>
+                              <select id="fromCity" class="form-control" [(ngModel)]="booking.Source" (change)="OnSelectionChange()" #source="ngModel" name="source" required>
                                 <option value="" selected disabled>Select City</option>
                                 <option *ngFor="let c of Options1" [ngValue]="c">{{c}}</option>
                               </select>
@@ -35,7 +33,7 @@
                           <div class="row form-group">
                             <div class="col-md-12">
                               <label for="cityTo">To</label>
-                              <select id="cityTo" class="form-control" [(ngModel)]="booking.Destination" (change)="OnSelectionChange()">
+                              <select id="cityTo" class="form-control" [(ngModel)]="booking.Destination" (change)="OnSelectionChange()" required>
                                 <option value="" selected disabled>Select City</option>
                                 <option *ngFor="let c of Options2" [ngValue]="c">{{c}}</option>
 
@@ -46,15 +44,14 @@
                           <div class="row form-group">
                             <div class="col-md-12">
                               <label for="date-start">Date Travel</label>
-                              <input id="dateTravel" type="date" [(ngModel)]="booking.JourneyDate" [ngModelOptions]="{standalone: true}" min="{{date}}"
-                                class="form-control" ng-value="todaysdate" required>
+                              <input id="dateTravel" type="date" [(ngModel)]="booking.JourneyDate" [ngModelOptions]="{standalone: true}" class="form-control" required>
                             </div>
                           </div>
 
                           <div class="row form-group">
                             <div class="col-md-12">
                               <label for="date-return">Return Date</label>
-                              <input id="dateReturn" type="date" [(ngModel)]="booking.ReturnJourneyDate" [ngModelOptions]="{standalone: true}" class="form-control">
+                              <input id="dateReturn" type="date" [(ngModel)]="booking.ReturnJourneyDate" [ngModelOptions]="{standalone: true}" class="form-control" required>
                             </div>
                           </div>
                           <div class="row form-group">
@@ -128,7 +125,7 @@
                 <div class="overlay">
                   <i class="ti-plus"></i>
                 </div>
-                <img src="assets/images/punjab2.jpg" alt="Image" class="img-responsive" >
+                <img src="assets/images/punjab2.jpg" alt="Image" class="img-responsive">
               </figure>
               <div class="fh5co-text">
                 <h2>Punjab</h2>
