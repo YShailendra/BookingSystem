@@ -25,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: '',//default url
-    component: HomeComponent
+    component: HomeComponent,
+    data: { state: 'home' } 
   },
   // {
   //   path: '**',//default url
@@ -33,27 +34,33 @@ const routes: Routes = [
   // },
   {
     path:'about',
-    component: AboutusComponent
+    component: AboutusComponent,
+    data: { state: 'about' } 
   },
   {
     path:'booking',
-    component: BookingComponent
+    component: BookingComponent,
+    data: { state: 'booking' } 
   },
   {
     path:'cancellation',
-    component: CancellationComponent
+    component: CancellationComponent,
+    data: { state: 'cancellation' }  
   },
   {
     path:'contact',
-    component: ContactComponent
+    component: ContactComponent,
+    data: { state: 'contact' } 
   },
   {
     path:'detail',
-    component: DetailComponent
+    component: DetailComponent,
+    data: { state: 'detail' } 
   },
   {
     path:'ticket',
     component:TicketComponent
+    
   },
   {
     path:'admin',

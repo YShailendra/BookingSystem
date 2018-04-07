@@ -9,11 +9,12 @@ import { SharedService } from '../services/shared.service';
   animations: [
     trigger('dialog', [
       transition('void => *', [
-        style({ transform: 'scale3d(.3, .3, .3)' }),
-        animate(200)
+        style({ transform: 'translateY(1000px)' }),
+        animate('2s cubic-bezier(.2,-0.48,.26,1.52)', style({transform: 'translateY(0px)', opacity: 1}))
       ]),
       transition('* => void', [
-        animate(200, style({ transform: 'scale3d(.0, .0, .0)' }))
+        style({ transform: 'translateY(0px)' }),
+        animate('3s cubic-bezier(.2,-0.48,.26,1.52)', style({transform: 'translateY(1000px)', opacity: 1}))
       ])
     ])
   ]

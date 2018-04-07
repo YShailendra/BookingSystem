@@ -27,12 +27,12 @@
               </div>
                <div class="collapse navbar-collapse " [ngClass]="{ 'in': isIn }"> 
                   <ul class="nav navbar-nav nav-font">
-                      <li><a routerLink="">Home</a></li>
-                      <li><a routerLink="about">About Us</a></li>
-                      <li><a routerLink="booking">Bookings</a></li>
-                      <li><a routerLink="cancellation">Cancellation</a></li>
-                      <li><a routerLink="contact">Contact</a></li>
-                      <li><a (click)="LoginOpen()" id="login">Login</a></li>  
+                      <li><a routerLink="" routerLinkActive="active">Home</a></li>
+                      <li><a routerLink="about" routerLinkActive="active">About Us</a></li>
+                      <li><a routerLink="booking" routerLinkActive="active">Bookings</a></li>
+                      <li><a routerLink="cancellation" routerLinkActive="active">Cancellation</a></li>
+                      <li><a routerLink="contact" routerLinkActive="active">Contact</a></li>
+                      <li><a (click)="LoginOpen()" id="login" routerLinkActive="active">Login</a></li>  
                   </ul>
               </div> <!-- #2 -->
           </div>
