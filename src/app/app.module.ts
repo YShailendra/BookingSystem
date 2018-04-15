@@ -8,8 +8,9 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { InterceptorModule } from './interceptor.module';
 import { Select2Module } from 'ng2-select2';
 import { Angular5Csv } from 'angular5-csv/Angular5-csv';
-
-
+import { Ng2TableModule } from 'ng2-table/ng2-table';
+import { PaginationModule } from 'ng2-bootstrap'; 
+import { TabsModule } from 'ng2-bootstrap';
 //local component
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -68,6 +69,10 @@ import { ReportingService } from '../app/services/reporting.service';
     Ng4LoadingSpinnerModule.forRoot(),
     ToastrModule.forRoot(), // ToastrModule added
     Select2Module, //select2 
+    Ng2TableModule,
+    PaginationModule.forRoot(),
+    TabsModule
+    
   ],
   providers: [LoginService,
               SharedService,CookieService,BookingService,BusService,RegisterService,ReportingService],
