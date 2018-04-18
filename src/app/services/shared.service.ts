@@ -180,6 +180,22 @@ export class SharedService {
   });
   doc.save('table.pdf');
   }
+ //print html
+ public print(printEl: any) {
+  var window:any; 
+  let printContainer: any = document.querySelector('#print-container');
 
+  if (!printContainer) {
+    printContainer = document.createElement('div');
+    printContainer.id = 'print-container';
+  } 
+
+  printContainer.innerHTML = '';
+
+  let elementCopy = printEl.cloneNode(true);
+  printContainer.appendChild(elementCopy);
+  document.body.appendChild(printContainer);
+  window.print();
+}
 
 }

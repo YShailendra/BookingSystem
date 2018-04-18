@@ -35,13 +35,26 @@
               </select>
             </div>
           </div>
+         
           <div class="row section-padding">
-            <div class="col-md-4">
+            <div class="col-sm-4">
+          
               <button class="btn btn-primary text-center" value="Generate Report" (click)="generateReports()"> Generate Report</button>
+          
             </div>
+          
           </div>
-
+          
+          </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <div style="float: right;">
+            <button class="btn btn-primary text-center" value="Print" (click)="print()">Print</button>
         </div>
+       
       </div>
     </div>
 <!-- Roprting grid -->
@@ -55,11 +68,14 @@
         </div>
       </div> -->
       <br>
-      <ng-table [config]="config"
-                (tableChanged)="onChangeTable(config)"
-                (cellClicked)="onCellClick($event)"
-                [rows]="rows" [columns]="columns">
-      </ng-table>
+      <div #printEl id="printcontent" >
+          <ng-table [config]="config"
+          (tableChanged)="onChangeTable(config)"
+          (cellClicked)="onCellClick($event)"
+          [rows]="rows" [columns]="columns">
+          </ng-table>
+      </div>
+    
       <pagination *ngIf="config.paging"
                   class="pagination-sm"
                   [(ngModel)]="page"
