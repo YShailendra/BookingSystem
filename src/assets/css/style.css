@@ -1927,3 +1927,7 @@ option{
   line-height: 45px;
   padding: 0px;
 }
+.report-table
+{
+  border: 1px solid lightgray;
+}

@@ -38,6 +38,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
   public Login()
   {
+    if(!this.Validate())
+    { 
+      return;
+    }
+    
      this.sub= this.loginService.Login(this.Username,this.Password).subscribe(s=>{ 
       var data=s.body as any;
       if(s.status===200)
@@ -59,5 +64,21 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnDestroy()
   {
     this.sub.unsubscribe();//clearing the memory on component end
+  }
+  private  Validate()
+  {
+    var isValid=true;
+    if(!this.Username || this.Username=="")
+    {
+      this.sharedService.ShowWarning("Please enter number");
+      isValid=false;
+    }
+    else if(!this.Password ||this.Password=="")
+    {
+      this.sharedService.ShowWarning("Please enter password");
+      isValid=false;
+    }
+   
+    return isValid;
   }
 }

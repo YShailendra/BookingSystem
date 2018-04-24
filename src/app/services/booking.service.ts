@@ -69,7 +69,7 @@ export class BookingService {
     }
 
     public CancelTicket(data){
-      return this.httpClient.put(environment.ApiUrl+"Booking",data);
+      return this.httpClient.get(environment.ApiUrl+"Booking/CancelTicket?bookingnumber="+data.BookingNumber+"&email="+data.Email);
     }
 
     public getBookingDetailById(data){

@@ -18,10 +18,11 @@ export class CancellationComponent implements OnInit {
   ngOnInit() {
   }
 
-  cancelTicket(){
+  cancelTicket(form){
         this.bookingService.CancelTicket(this.booking).subscribe(data=>{
               this.response = data;
-              this.sharedService.ShowSuccess("Ticket Booked Successfuly");
+              form.reset();
+              this.sharedService.ShowSuccess("Ticket cancel Successfuly");
         },error=>{this.sharedService.ShowError("Unable to Cancel Ticket")})
   }
 

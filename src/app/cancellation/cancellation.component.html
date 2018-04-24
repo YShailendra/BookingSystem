@@ -30,27 +30,31 @@
 <hr>
 <div class="row section-padding">
     <div class="container">
+      
         <div class="col-md-6 col-md-push-3">
           <div class="card">
             <h3 class="text-center">Enter the booking details</h3>
+            <form  name="cancel-form" #cancelForm="ngForm" >
+                <div class="form-group">
+                    <label>Booking Number</label>
+                    <input type="text" class="form-control" required 
+                    [(ngModel)]="booking.BookingNumber" name="bookingNumber" #bookingNumber="ngModel" >
+                  </div>
+                  <div class="form-group">
+                    <label >Email</label>
+                    <input type="text" class="form-control" [(ngModel)]="booking.Email"  name="bookingEmail" #bookingEmail="ngModel" >
+                  </div>
+                  <div>
+                      <input type="checkbox" id="terms">
+                      <label for="terms">I agree to all terms and conditions</label>
+                    </div>
+                  <div class="text-center">
+                  <button type="submit" class="btn btn-primary" (click)="cancelTicket(cancelForm)">Submit</button>
+                  </div>
+            </form>
+          
         
-          <div class="form-group">
-            <label>Booking Number</label>
-            <input type="text" class="form-control" required [(ngModel)]="booking.BookingNumber" >
           </div>
-          <div class="form-group">
-            <label >Email</label>
-            <input type="text" class="form-control" [(ngModel)]="booking.Email">
-          </div>
-          <div>
-              <input type="checkbox" id="terms">
-              <label for="terms">I agree to all terms and conditions</label>
-            </div>
-          <div class="text-center">
-          <button type="submit" class="btn btn-primary" (click)="cancelTicket()">Submit</button>
-          </div>
-        
-    </div>
     </div>
 </div>
 

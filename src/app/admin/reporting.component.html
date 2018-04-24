@@ -47,46 +47,49 @@
           
           </div>
       </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-md-12">
-        <div style="float: right;">
-            <button class="btn btn-primary text-center" value="Print" (click)="print()">Print</button>
+      <br>
+      <div *ngIf="data && data.length>0" class="row">
+        <div class="col-md-12">
+          <div style="float: right;">
+              <button class="btn btn-primary text-center" value="Print" (click)="print()">Print</button>
+          </div>
+         
         </div>
+      </div>
+  <!-- Roprting grid -->
+      <div *ngIf="data && data.length>0" class="row">
+        <div class="col-sm-12">
+            <div id="printcontent" class="report-table">
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Seats</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Journey Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of data">
+                        <td>{{item.Name}}</td>
+                        <td>{{item.PhoneNo}}</td>
+                        <td>{{item.Seats}}</td>
+                        <td>{{item.Source}}</td>
+                        <td>{{item.Destination}}</td>
+                        <td>{{item.JourneyDate}}</td>
+    
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+         
+          
        
       </div>
     </div>
-<!-- Roprting grid -->
-    <div class="row">
-      <!-- <div class="row">
-        <div class="col-md-4">
-          <input *ngIf="config.filtering" placeholder="Filter all columns"
-                 [ngTableFiltering]="config.filtering"
-                 class="form-control"
-                 (tableChanged)="onChangeTable(config)"/>
-        </div>
-      </div> -->
-      <br>
-      <div #printEl id="printcontent" >
-          <ng-table [config]="config"
-          (tableChanged)="onChangeTable(config)"
-          (cellClicked)="onCellClick($event)"
-          [rows]="rows" [columns]="columns">
-          </ng-table>
-      </div>
-    
-      <pagination *ngIf="config.paging"
-                  class="pagination-sm"
-                  [(ngModel)]="page"
-                  [totalItems]="length"
-                  [itemsPerPage]="itemsPerPage"
-                  [maxSize]="maxSize"
-                  [boundaryLinks]="true"
-                  [rotate]="false"
-                  (pageChanged)="onChangeTable(config, $event)"
-                  (numPages)="numPages = $event">
-      </pagination>
-      <pre *ngIf="config.paging" class="card card-block card-header">Page: {{page}} / {{numPages}}</pre>
     </div>
-  </div>
+   
